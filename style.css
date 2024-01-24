@@ -1,0 +1,17 @@
+
+#flexibleContainer {
+    height: 95vh;
+    width:auto;
+    border: 1px solid #000;
+    padding: 10px;
+    overflow: auto;
+}
+
+
+
+#randomNumString {
+    word-wrap: break-word;
+    /* overflow: hidden; */
+    color: #000;
+    font-size: 30px;
+}
