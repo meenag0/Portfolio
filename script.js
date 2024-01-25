@@ -52,12 +52,81 @@ document.addEventListener('DOMContentLoaded', function () {
             setTimeout(() => {
                 randomNumString.parentNode.removeChild(randomNumString);
               }, 850); // 5000 milliseconds = 5 seconds (should match or exceed the transition duration)
-            }, 5000);
+            }, 3500);
     } 
 
+    getDisplayNums();  
 
-    getDisplayNums();       
-        
+    let nameBox = document.createElement("span");
+    nameBox.className = "firstText";
+    nameBox.id = "nameText";
+    nameBox.innerHTML = "Hi, I am Meena. <br> I am ";
 
+    let traitsBox = document.createElement("span");
+    traitsBox.setAttribute('data-type', JSON.stringify(["Creative", "Passionate", "A Problem Solver"]));
+    traitsBox.setAttribute('data-period', '2000');
+    traitsBox.innerHTML = "&nbsp;";
 
+    let introText = document.createElement("span");
+    introText.className = "firstText";
+    introText.id = "fullText";
+
+    // Append nameBox, traitsBox, and cursor as separate elements
+    introText.appendChild(nameBox);
+    introText.appendChild(traitsBox);
+
+    // Create cursor element
+    let cursor = document.createElement("span");
+    cursor.className = "cursorIcon";
+    introText.appendChild(cursor);
+
+    document.getElementById('flexibleContainer').appendChild(introText);
+
+ 
+    // function introText(){
+
+        var TxtType = function(el, toRotate, period) {
+            this.toRotate = toRotate;
+            this.el = el;
+            this.loopNum = 0;
+            this.period = parseInt(period, 10) || 2000;
+            this.txt = '';
+            this.tick();
+            this.isDeleting = false;
+        };
+    
+        TxtType.prototype.tick = function() {
+            var i = this.loopNum % this.toRotate.length;
+            var fullTxt = this.toRotate[i];
+    
+            if (this.isDeleting) {
+            this.txt = fullTxt.substring(0, this.txt.length - 1);
+            } else {
+            this.txt = fullTxt.substring(0, this.txt.length + 1);
+            }
+    
+            this.el.innerHTML = '<span class="cursorIcon">'+this.txt+'</span>';
+    
+            var that = this;
+            var delta = 200 - Math.random() * 100;
+    
+            if (this.isDeleting) { delta /= 2; }
+    
+            if (!this.isDeleting && this.txt === fullTxt) {
+                delta = this.period;
+                this.isDeleting = true;
+            } else if (this.isDeleting && this.txt === '') {
+                this.isDeleting = false;
+                this.loopNum++;
+                delta = 500;
+            }
+    
+            setTimeout(function() {
+            that.tick();
+            }, delta);
+        };
+    
+        var toRotate = traitsBox.getAttribute('data-type') || '[]';
+        var period = traitsBox.getAttribute('data-period') || '2000';
+        new TxtType(traitsBox, JSON.parse(toRotate), period);
 });

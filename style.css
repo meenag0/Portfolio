@@ -28,3 +28,21 @@ body, html {
     opacity: 1;
     transition: opacity 1s ease-out;
 }
+
+.firstText {
+    font-family: 'Courier New', Courier, monospace;
+    color: greenyellow;
+}
+
+.blinkingCursor {
+    border-right: .05em solid;
+    animation: caret 1s steps(1) infinite;
+  }
+  
+  @keyframes caret {
+    50% {
+      border-color: transparent;
+    }
+  }
+
+  
