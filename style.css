@@ -1,86 +1,68 @@
 body, html {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 @font-face {
-  font-family: 'triakis__font_lightregular';
-  src: url('triakisfont-regular-webfont.woff2') format('woff2'),
-       url('triakisfont-regular-webfont.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
+font-family: 'triakis__font_lightregular';
+src: url('triakisfont-regular-webfont.woff2') format('woff2'),
+     url('triakisfont-regular-webfont.woff') format('woff');
+font-weight: normal;
+font-style: normal;
 
 }
 
-.container {
-    background-color: #000;
-    height: 100vh;
-    width: 100vw;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
+#flexibleContainer {
+  background-color: #000;
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
 }
 
 #randomNumString {
-    font-family: 'Courier New', Courier, monospace;
-    color: greenyellow;
-    margin-top: -26px;
-    word-wrap: break-word;
-    overflow-y: hidden;
-    font-size: 23px;
-    /* opacity: 1;
-    transition: opacity 0.03s ease-out; */
-}
-
-.firstText {
-    font-family: triakis__font_lightregular, serif;
-    letter-spacing: 0.005m;
-    color: rgb(255, 254, 252);
-    font-size: 80px;
-    font-weight: 500;
-    line-height: 92%;
-    /* position:sticky;
-    top: 40%;
-    right: 55%; */
-}
-
-.traitsClass {
-  /* display: inline-block; */
+  font-family: 'Courier New', Courier, monospace;
   color: greenyellow;
+  margin-top: -26px;
+  word-wrap: break-word;
+  overflow-y: hidden;
+  font-size: 23px;
+  /* opacity: 1;
+  transition: opacity 0.03s ease-out; */
 }
-
-.cursorIcon {
-    color: greenyellow;
-    border-right: .05em solid;
-    animation: caret 1s steps(1) infinite;
-  }
-  
-  @keyframes caret {
-    50% {
-      border-color: transparent;
-    }
-  }
 
 #flexibleContainer #fullText {
-  /* position: -webkit-sticky;
-  top: 50%; /* Adjust this value to position vertically */
-  /* left: 50%; /* Adjust this value to position horizontally */
-  /* transform: translate(-50%, -50%); */ 
-  
-  /* top: 30%;
-  right: 40%; */
-  /* float:left;width:40%; */
-
-  align-items: center;
   font-family: triakis__font_lightregular, serif;
   letter-spacing: 0.005m;
+  color: rgb(255, 254, 252);
   font-size: 80px;
   font-weight: 500;
   line-height: 92%;
+  position:sticky;
+  top: 25%;
+  left: 5%;
+  transform: translateY(-30%);
 
- }
+}
+
+.traitsClass {
+color: greenyellow;
+}
+
+.cursorIcon {
+  color: greenyellow;
+  border-right: .05em solid;
+  animation: caret 1s steps(1) infinite;
+}
+
+@keyframes caret {
+  50% {
+    border-color: transparent;
+  }
+}
