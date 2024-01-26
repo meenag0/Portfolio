@@ -161,7 +161,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 
             };
 
-            //Retrieves the attributes 'data-type' and 'data-period' from traitsBox
+            //retrieves the attributes 'data-type' and 'data-period' from traitsBox
             var toAnimate = traitsBox.getAttribute('data-type') || '[]';
             var period = traitsBox.getAttribute('data-period') || '200';
             // creates an instance of TxtTypeTraits with these attributes
