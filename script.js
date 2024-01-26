@@ -62,8 +62,8 @@ document.addEventListener('DOMContentLoaded', function () {
         let nameBox = document.createElement("span");  
         nameBox.className = "firstText anim-typewriter";  //setting class of namebox span
         nameBox.id = "nameText";
-        nameBox.innerHTML = "Hi, I am Meena. <br> I am ";  
-
+        nameBox.innerHTML = "   Hi, I am Meena.   <br> I am ";  
+ 
         //creating another span element for combining moving and non-moving string elemtents, and assigning to introText
         var introText = document.createElement("span");
         introText.className = "firstText";
@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // another span element for moving string elemtents
         let traitsBox = document.createElement("span");
         traitsBox.className = "traitsClass";
-        traitsBox.setAttribute('data-type', JSON.stringify(["Creative.", "Passionate.", "A Problem Solver."])); //Holds a JSON string representing an array of strings
+        traitsBox.setAttribute('data-type', JSON.stringify(["Creative.", "Passionate.", "Inquisitive."])); //Holds a JSON string representing an array of strings
         traitsBox.setAttribute('data-period', '2000');
         //innerHTML set to non-breaking space: placeholder and will be dynamically updated during the text typing animation
         traitsBox.innerHTML = "&nbsp;";  
@@ -95,6 +95,7 @@ document.addEventListener('DOMContentLoaded', function () {
     
             //appends updated introText to screen container
             document.getElementById('flexibleContainer').appendChild(introText);
+            
     
             // constructor funct for the 'typewriter' effect ()
             //el: HTML element to apply effect to, toAnimate: array of strings to display in sequence, period: duration of animation
@@ -157,14 +158,17 @@ document.addEventListener('DOMContentLoaded', function () {
                 setTimeout(function () {
                     that.tick();
                 }, delta);
+                
             };
-    
+
             //Retrieves the attributes 'data-type' and 'data-period' from traitsBox
             var toAnimate = traitsBox.getAttribute('data-type') || '[]';
             var period = traitsBox.getAttribute('data-period') || '200';
             // creates an instance of TxtTypeTraits with these attributes
             new TxtTypeTraits(traitsBox, JSON.parse(toAnimate), period);
         }, 3500);
+
+    
 
     }
 
