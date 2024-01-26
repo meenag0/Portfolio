@@ -47,86 +47,101 @@ document.addEventListener('DOMContentLoaded', function () {
         const intervalTime = setInterval(() => {updateRandomNumbers();}, 1);
 
         setTimeout(() => {
-            randomNumString.style.transition = "opacity 0.85s ease-out"; // Adjust the duration as needed
+            randomNumString.style.transition = "opacity 0.3s ease-out"; // Adjust the duration as needed
             randomNumString.style.opacity = 0;
             setTimeout(() => {
                 randomNumString.parentNode.removeChild(randomNumString);
               }, 850); // 5000 milliseconds = 5 seconds (should match or exceed the transition duration)
-            }, 3500);
+            }, 2000);
     } 
 
-    getDisplayNums();  
 
-    let nameBox = document.createElement("span");
-    nameBox.className = "firstText";
-    nameBox.id = "nameText";
-    nameBox.innerHTML = "Hi, I am Meena. <br> I am ";
-
-    let traitsBox = document.createElement("span");
-    traitsBox.setAttribute('data-type', JSON.stringify(["Creative", "Passionate", "A Problem Solver"]));
-    traitsBox.setAttribute('data-period', '2000');
-    traitsBox.innerHTML = "&nbsp;";
-
-    let introText = document.createElement("span");
-    introText.className = "firstText";
-    introText.id = "fullText";
-
-    // Append nameBox, traitsBox, and cursor as separate elements
-    introText.appendChild(nameBox);
-    introText.appendChild(traitsBox);
-
-    // Create cursor element
-    let cursor = document.createElement("span");
-    cursor.className = "cursorIcon";
-    introText.appendChild(cursor);
-
-    document.getElementById('flexibleContainer').appendChild(introText);
-
- 
-    // function introText(){
-
-        var TxtType = function(el, toRotate, period) {
-            this.toRotate = toRotate;
-            this.el = el;
-            this.loopNum = 0;
-            this.period = parseInt(period, 10) || 2000;
-            this.txt = '';
-            this.tick();
-            this.isDeleting = false;
-        };
+    function AnimatedIntro() {
+        let nameBox = document.createElement("span");
+        nameBox.className = "firstText anim-typewriter";
+        nameBox.id = "nameText";
+        nameBox.innerHTML = "Hi, I am Meena. <br> I am ";
     
-        TxtType.prototype.tick = function() {
-            var i = this.loopNum % this.toRotate.length;
-            var fullTxt = this.toRotate[i];
+        var introText = document.createElement("span");
+        introText.className = "firstText";
+        introText.id = "fullText";
     
-            if (this.isDeleting) {
-            this.txt = fullTxt.substring(0, this.txt.length - 1);
-            } else {
-            this.txt = fullTxt.substring(0, this.txt.length + 1);
-            }
+        introText.appendChild(nameBox);
     
-            this.el.innerHTML = '<span class="cursorIcon">'+this.txt+'</span>';
+        document.getElementById('flexibleContainer').appendChild(introText);
     
-            var that = this;
-            var delta = 200 - Math.random() * 100;
+        setTimeout(() => {
+            let traitsBox = document.createElement("span");
+            traitsBox.className = "traitsClass";
+            traitsBox.setAttribute('data-type', JSON.stringify(["Creative.", "Passionate.", "A Problem Solver.", ""]));
+            traitsBox.setAttribute('data-period', '2000');
+            traitsBox.innerHTML = "&nbsp;";
     
-            if (this.isDeleting) { delta /= 2; }
+            introText.appendChild(traitsBox);
     
-            if (!this.isDeleting && this.txt === fullTxt) {
-                delta = this.period;
-                this.isDeleting = true;
-            } else if (this.isDeleting && this.txt === '') {
+            let cursorTraits = document.createElement("span");
+            cursorTraits.className = "cursorIcon";
+            introText.appendChild(cursorTraits);
+    
+            document.getElementById('flexibleContainer').appendChild(introText);
+    
+            let TxtTypeTraits = function (el, toRotate, period) {
+                this.toRotate = toRotate;
+                this.el = el;
+                this.loopNum = 0;
+                this.period = parseInt(period, 10) || 2000;
+                this.txt = '';
+                this.tick();
                 this.isDeleting = false;
-                this.loopNum++;
-                delta = 500;
-            }
+            };
     
-            setTimeout(function() {
-            that.tick();
-            }, delta);
-        };
+            TxtTypeTraits.prototype.tick = function () {
+                var i = this.loopNum % this.toRotate.length;
+                var fullTxt = this.toRotate[i];
     
-        var toRotate = traitsBox.getAttribute('data-type') || '[]';
-        var period = traitsBox.getAttribute('data-period') || '2000';
-        new TxtType(traitsBox, JSON.parse(toRotate), period);
+                if (this.isDeleting) {
+                    this.txt = fullTxt.substring(0, this.txt.length - 1);
+                } else {
+                    this.txt = fullTxt.substring(0, this.txt.length + 1);
+                }
+    
+                this.el.innerHTML = this.txt;
+    
+                // Toggle visibility of the cursor based on the current text
+                cursorTraits.style.visibility = this.isDeleting && this.txt === '' ? 'hidden' : 'visible';
+    
+                var that = this;
+                var delta = 40 - Math.random() * 20;
+    
+                if (this.isDeleting) {
+                    delta /= 2;
+                }
+    
+                if (!this.isDeleting && this.txt === fullTxt) {
+                    delta = this.period;
+                    this.isDeleting = true;
+    
+                    if (i === this.toRotate.length - 1) {
+                        return;
+                    }
+                } else if (this.isDeleting && this.txt === '') {
+                    this.isDeleting = false;
+                    this.loopNum++;
+                    delta = 0;
+                }
+    
+                setTimeout(function () {
+                    that.tick();
+                }, delta);
+            };
+    
+            var toRotate = traitsBox.getAttribute('data-type') || '[]';
+            var period = traitsBox.getAttribute('data-period') || '200';
+            new TxtTypeTraits(traitsBox, JSON.parse(toRotate), period);
+        }, 3500);
+    }
+
+    getDisplayNums();
+    AnimatedIntro();
+
 });

@@ -3,6 +3,15 @@ body, html {
     padding: 0;
 }
 
+@font-face {
+  font-family: 'triakis__font_lightregular';
+  src: url('triakisfont-regular-webfont.woff2') format('woff2'),
+       url('triakisfont-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
 #flexibleContainer {
     background-color: #000;
     height: 100vh;
@@ -25,16 +34,28 @@ body, html {
     word-wrap: break-word;
     overflow-y: hidden;
     font-size: 23px;
-    opacity: 1;
-    transition: opacity 1s ease-out;
+    /* opacity: 1;
+    transition: opacity 0.03s ease-out; */
 }
 
 .firstText {
-    font-family: 'Courier New', Courier, monospace;
-    color: greenyellow;
+    font-family: triakis__font_lightregular, serif;
+    letter-spacing: 0.005m;
+    color: rgb(255, 254, 252);
+    font-size: 80px;
+    font-weight: 500;
+    line-height: 92%;
+    position:sticky; /* or use 'fixed' depending on your requirement */
+    top: 40%;
+    left: 10%;
 }
 
-.blinkingCursor {
+.traitsClass {
+  color: greenyellow;
+}
+
+.cursorIcon {
+    color: greenyellow;
     border-right: .05em solid;
     animation: caret 1s steps(1) infinite;
   }
@@ -44,5 +65,3 @@ body, html {
       border-color: transparent;
     }
   }
-
-  
