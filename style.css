@@ -45,7 +45,7 @@ body, html {
     font-size: 80px;
     font-weight: 500;
     line-height: 92%;
-    position:sticky; /* or use 'fixed' depending on your requirement */
+    position:sticky;
     top: 40%;
     left: 10%;
 }
