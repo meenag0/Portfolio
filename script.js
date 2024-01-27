@@ -2,12 +2,8 @@
 
 document.addEventListener('DOMContentLoaded', function () {
 
-    // getting div element "FlexibleContainer" and p element "randomNumString"
-    const divSpaces = document.getElementById('flexibleContainer');
-    const randomNumString = document.getElementById('randomNumString');
 
-
-    function getDisplayNums(){
+    function getDisplayNums(resolve){
         // getting div element "FlexibleContainer" and p element "randomNumString"
         const divSpaces = document.getElementById('flexibleContainer');
         const randomNumString = document.getElementById('randomNumString');
@@ -51,6 +47,7 @@ document.addEventListener('DOMContentLoaded', function () {
             randomNumString.style.opacity = 0;
             setTimeout(() => {
                 randomNumString.parentNode.removeChild(randomNumString);
+                resolve();
               }, 850); // 5000 milliseconds = 5 seconds (should match or exceed the transition duration)
             }, 2000);
     } 
@@ -72,7 +69,7 @@ document.addEventListener('DOMContentLoaded', function () {
         introText.appendChild(nameBox); //appening nameBox element to introText container
     
         //appends the introText container (with non-moving text atp to flexibleContainer in HTML (which is just the screen)
-        document.getElementById('flexibleContainer').appendChild(introText); 
+        document.body.appendChild(introText); 
 
         // another span element for moving string elemtents
         let traitsBox = document.createElement("span");
@@ -94,7 +91,7 @@ document.addEventListener('DOMContentLoaded', function () {
             introText.appendChild(cursorTraits);
     
             //appends updated introText to screen container
-            document.getElementById('flexibleContainer').appendChild(introText);
+            document.body.appendChild(introText);
             
     
             // constructor funct for the 'typewriter' effect ()
@@ -168,11 +165,38 @@ document.addEventListener('DOMContentLoaded', function () {
             new TxtTypeTraits(traitsBox, JSON.parse(toAnimate), period);
         }, 3500);
 
-    
+    }
+
+    function printDescription() {
+        let descriptionDiv = document.createElement("div");
+        descriptionDiv.className = "descriptionClass";
+        descriptionDiv.id="descriptionId";
+        // and give it some content
+        let descriptionVar = document.createTextNode("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+
+        );
+      
+        // add the text node to the newly created div
+        descriptionDiv.appendChild(descriptionVar);
+
+        document.body.appendChild(descriptionDiv);
 
     }
 
-    getDisplayNums();
-    AnimatedIntro();
+    // wrap getDisplayNums function in a promise
+    function runDisplayNums() {
+        return new Promise((resolve) => {
+            getDisplayNums(resolve);
+        });
+    }
+
+    // call functions in sequence using promises
+    runDisplayNums()
+        .then(() => AnimatedIntro())
+        .then(() => printDescription());
+
+
+    
 
 });
+

@@ -1,16 +1,17 @@
 body, html {
   margin: 0;
   padding: 0;
+  background-color: #000;
 }
 
-@font-face {
+/* @font-face {
 font-family: 'triakis__font_lightregular';
 src: url('triakisfont-regular-webfont.woff2') format('woff2'),
      url('triakisfont-regular-webfont.woff') format('woff');
-font-weight: normal;
-font-style: normal;
-
-}
+src: url('JetBrainsMono-Regular') format('ttf'), 
+     url('JetBrainsMono-SemiBold') format('ttf'),
+     url('JetBrainsMono-Lught') format('ttf');
+} */
 
 #flexibleContainer {
   background-color: #000;
@@ -37,23 +38,27 @@ font-style: normal;
   transition: opacity 0.03s ease-out; */
 }
 
-#flexibleContainer #fullText {
-  font-family: triakis__font_lightregular, serif;
-  letter-spacing: 0.005m;
+#fullText {
+  font-family: JetBrains Mono, serif;
+  letter-spacing: 0.005em;
   color: rgb(255, 254, 252);
-  font-size: 80px;
+  font-size: 4.6vw; /* using viewport width for font size */
   font-weight: 500;
-  line-height: 92%;
-  position:sticky;
-  top: 25%;
-  left: 5%;
+  position: fixed;
+  top: 20%;
+  left: 4.5%;
   transform: translateY(-30%);
-
+  margin-bottom: 3%;
 }
 
-.traitsClass {
-color: greenyellow;
+#fullText .traitsClass {
+  color: greenyellow;
+  text-decoration-line: underline;
+  text-decoration-thickness: 0.2rem;
+  font-weight: 550;
 }
+
+
 
 .cursorIcon {
   color: greenyellow;
@@ -65,4 +70,17 @@ color: greenyellow;
   50% {
     border-color: transparent;
   }
+}
+
+ #descriptionId {
+  font-family: 'JetBrains Mono', sans-serif;
+  /* font-style: lighter; */
+  font-size: 1.27vw;
+  word-wrap:break-word;
+  margin-right: 45%;
+  font-weight: 200;
+  color: rgb(235, 230, 230);
+  position: fixed;
+  bottom: 28%; 
+  left: 4.5%;
 }
