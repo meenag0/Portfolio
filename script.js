@@ -9,8 +9,8 @@ document.addEventListener('DOMContentLoaded', function () {
         const randomNumString = document.getElementById('randomNumString');
 
         //arbitrary numbers used to find APPROXIMATE (not actual) number of characters that can fit on screen
-        charHeight = 2;
-        charWidth = 5.45;
+        let charHeight = 2;
+        let charWidth = 5.45;
 
         const divWidth = divSpaces.offsetWidth;   //width of div flexibleContainer
         const divHeight = divSpaces.offsetHeight; //height of div flexibleContainer
@@ -43,12 +43,12 @@ document.addEventListener('DOMContentLoaded', function () {
         const intervalTime = setInterval(() => {updateRandomNumbers();}, 1);
 
         setTimeout(() => {
-            randomNumString.style.transition = "opacity 0.3s ease-out"; // Adjust the duration as needed
+            randomNumString.style.transition = "opacity 0.3s ease-out"; 
             randomNumString.style.opacity = 0;
             setTimeout(() => {
                 randomNumString.parentNode.removeChild(randomNumString);
                 resolve();
-              }, 850); // 5000 milliseconds = 5 seconds (should match or exceed the transition duration)
+              }, 850); 
             }, 2000);
     } 
 
@@ -172,31 +172,66 @@ document.addEventListener('DOMContentLoaded', function () {
         descriptionDiv.className = "descriptionClass";
         descriptionDiv.id="descriptionId";
         // and give it some content
-        let descriptionVar = document.createTextNode("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-
-        );
-      
-        // add the text node to the newly created div
-        descriptionDiv.appendChild(descriptionVar);
+        descriptionDiv.innerHTML = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <br><br> Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
+    
 
         document.body.appendChild(descriptionDiv);
 
     }
 
-    // wrap getDisplayNums function in a promise
+    function createButtons() {
+        let workButton = document.createElement("button");
+        workButton.className="workClass";
+        workButton.id = "workID";
+        workButton.innerHTML = "*Work";
+        document.body.appendChild(workButton);
+
+        let playButton = document.createElement("button");
+        playButton.className="playClass";
+        playButton.id = "playID";
+        playButton.innerHTML = "*Play";
+        document.body.appendChild(playButton);
+
+        let resumeButton = document.createElement("button");
+        resumeButton.className="resumeClass";
+        resumeButton.id = "resumeID";
+        resumeButton.innerHTML = "*Resume";
+        document.body.appendChild(resumeButton);
+
+
+        let mediaButton = document.createElement("button");
+        mediaButton.className="mediaClass";
+        mediaButton.id = "mediaID";
+        mediaButton.innerHTML = "*Media";
+        document.body.appendChild(mediaButton);
+
+        let contactButton = document.createElement("button");
+        contactButton.className="contactClass";
+        contactButton.id = "contactID";
+        contactButton.innerHTML = "*Contact";
+        document.body.appendChild(contactButton);
+
+        
+
+
+
+    }
+
     function runDisplayNums() {
         return new Promise((resolve) => {
             getDisplayNums(resolve);
         });
     }
 
+    // execute AnimatedIntro, printDescription, and createButtons simultaneously
+    function runAnimations() {
+        return Promise.all([AnimatedIntro(), printDescription(), createButtons()]);
+    }
+
     // call functions in sequence using promises
     runDisplayNums()
-        .then(() => AnimatedIntro())
-        .then(() => printDescription());
-
-
-    
+        .then(() => runAnimations())
+        .catch((error) => console.error(error));
 
 });
 
