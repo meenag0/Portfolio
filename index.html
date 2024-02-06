@@ -10,11 +10,36 @@
     <link rel="stylesheet" href="style.css">
     <title>Home Page</title>
 </head>
+
+<script type="importmap">
+    {
+      "imports": {
+        "three": "https://unpkg.com/three@0.158.0/build/three.module.js",
+        "lil-gui": "https://cdn.jsdelivr.net/npm/lil-gui@0.19/+esm"
+      }  
+    }
+  </script>
+  
 <body>
-    <div class="container" id="flexibleContainer">
-        <p class="container" id="randomNumString">
+    <canvas class="webgl"></canvas>
+
+    <section class="section">
+        <h1 id="nameText" class="firstText">
+            Hi, I am Meena. <br> I am             
+            <span id="traitsBox" class="traitsClass" data-type='["Creative.", "Passionate.", "Inquisitive."]' data-period='1600'>&nbsp;</span>
+            <span id="cursorTraits" class="cursorIcon"></span>
+        </h1>
+
+        <p id="descriptionId" class="descriptionClass">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <br><br> Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
         </p>
-    </div>
-    <script src="script.js"></script>
+
+        <button id="workID" class="workClass">*Work</button>
+        <button id="playID" class="playClass">*Play</button>
+        <button id="resumeID" class="resumeClass">*Resume</button>
+        <button id="contactID" class="contactClass">*Contact</button>
+    </section>
+    <script src="script.js">
+    </script>
 </body>
 </html>
