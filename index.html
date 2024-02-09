@@ -2,32 +2,26 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://fonts.googleapis.com/css?family=JetBrains Mono' rel='stylesheet'>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;200&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <title>Home Page</title>
+    
+    <title>Home</title>
 </head>
-
-<script type="importmap">
-    {
-      "imports": {
-        "three": "https://unpkg.com/three@0.158.0/build/three.module.js",
-        "lil-gui": "https://cdn.jsdelivr.net/npm/lil-gui@0.19/+esm"
-      }  
-    }
-  </script>
-  
 <body>
-    <canvas class="webgl"></canvas>
-
-    <section class="section">
+    <canvas class="canvas"></canvas>
+    <section class="section" id = "s1">
         <h1 id="nameText" class="firstText">
             Hi, I am Meena. <br> I am             
-            <span id="traitsBox" class="traitsClass" data-type='["Creative.", "Passionate.", "Inquisitive."]' data-period='1600'>&nbsp;</span>
-            <span id="cursorTraits" class="cursorIcon"></span>
+            <span id="traitsBox" class="traitsClass">
+                <span class="word">Creative.</span>
+                <span class="word">Passionate.</span>
+                <span class="word">Inquisitive.</span>
+            </span>
+                        <span id="cursorTraits" class="cursorIcon"></span>
         </h1>
 
         <p id="descriptionId" class="descriptionClass">
@@ -39,7 +33,16 @@
         <button id="resumeID" class="resumeClass">*Resume</button>
         <button id="contactID" class="contactClass">*Contact</button>
     </section>
-    <script src="script.js">
-    </script>
+
+    <section class="section" id = "s2">
+        <h1 class="testText">My Projects</h1>
+    </section>
+
+    </section>
+    <section class="section" id = "s3">
+    <h2>Books I Love</h2>
+    </section>
+
 </body>
 </html>
+
