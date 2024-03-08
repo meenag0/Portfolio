@@ -1,37 +1,84 @@
-* {
+
+body, html {
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+	height: 100vh;
   margin: 0;
   padding: 0;
 }
 
-html,
-body {
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }
 
+/* 
 .canvas {
   position: fixed;
   top: 0;
   left: 0;
   outline: none;
-}
+} */
 
 @font-face {
   font-family: 'Happy Times NG Italic';
   src: url('happy-times-NG_italic_master_web.woff') format('woff');
+
    }
   
+@font-face {
+  font-family: 'Inter';
+  src: url('Inter-Medium.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Inter-Light';
+  src: url('Inter-ExtraLight.woff2') format('woff2');
+}
        /* url('triakisfont-regular-webfont.woff') format('woff');
   src: url('JetBrainsMono-Regular') format('ttf'), 
        url('JetBrainsMono-SemiBold') format('ttf'),
        url('JetBrainsMono-Lught') format('ttf');
   } */ 
   
-  
-   
+
+  .navbar {
+    display: flex; /* Use flexbox */
+    justify-content: space-between; /* Distribute items evenly */
+    text-align: center; /* Centers the text horizontally */
+    margin-top: 40px; /* Adds space at the top */
+    position: fixed;
+    width: 19%; /* Set width */
+    top: 0; /* Position at the top of the viewport */
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+  .navbar a {
+    margin: 0 3%;
+    padding: 10px 20px; /* Adjust padding as needed */
+    border-radius: 20px; /* Adjust border-radius as needed */
+    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);Semi-transparent background color */
+    text-decoration: none; /* Remove underline */
+  }
+
+
   .firstText {
     height: 15vh;
     width: 60vw;
     position: absolute;
-    font-family: JetBrains Mono, serif;
+    font-family: 'Inter';
+    
     /* letter-spacing: 0.005em; */
     color: rgb(255, 244, 244);
     font-size: 5.3vw; /* using viewport width for font size */
@@ -44,7 +91,6 @@ body {
   
   .traitsClass {
     color: greenyellow;
-    text-decoration-line: underline;
     text-decoration-thickness: 0.2rem;
     font-weight: 550;
   }
@@ -64,9 +110,9 @@ body {
    #descriptionId {
     width: 49%;
     height: max-content;
-    font-family: 'JetBrains Mono', sans-serif;
+    font-family: 'Inter-Light', sans-serif;
     font-size: 1.26vw;
-    font-weight: 200;
+    font-weight: 100;
     color: rgb(235, 230, 230);
     position: absolute;
     top: 49%; 

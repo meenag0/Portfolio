@@ -5,43 +5,54 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://fonts.googleapis.com/css?family=JetBrains Mono' rel='stylesheet'>
-    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" type="text/css" href="style.css">
     
     <title>Home</title>
 </head>
 <body>
-    <canvas class="canvas"></canvas>
-    <section class="section" id = "s1">
-        <h1 id="nameText" class="firstText">
-            Hi, I am Meena. <br> I am             
-            <span id="traitsBox" class="traitsClass">
-                <span class="word">Creative.</span>
-                <span class="word">Passionate.</span>
-                <span class="word">Inquisitive.</span>
-            </span>
-                        <span id="cursorTraits" class="cursorIcon"></span>
-        </h1>
+    <!-- <canvas class="canvas"></canvas> -->
+    <div class="navbar">
+        <!-- <div class="navbar-bg"> </div> -->
 
-        <p id="descriptionId" class="descriptionClass">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <br><br> Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </p>
+        <a href="#home">Home</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </div>
 
-        <button id="workID" class="workClass">*Work</button>
-        <button id="playID" class="playClass">*Play</button>
-        <button id="resumeID" class="resumeClass">*Resume</button>
-        <button id="contactID" class="contactClass">*Contact</button>
-    </section>
+    <div class="main"> 
+        <section class="section" id = "s1">
+            <h1 id="nameText" class="firstText">
+                Hi, I am Meena. <br>              
+                <span id="traitsBox" class="traitsClass">
+                    <span class="word">Creative</span>
+                    <span class="word">Passionate</span>
+                    <span class="word">Inquisitive</span>
+                </span>
+                <span id="cursorTraits" class="cursorIcon"></span>
+            </h1>
 
-    <section class="section" id = "s2">
-        <h1 class="testText">My Projects</h1>
-    </section>
+            <p id="descriptionId" class="descriptionClass">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <br><br> Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+<!-- 
+            <button id="workID" class="workClass">*Work</button>
+            <button id="playID" class="playClass">*Play</button>
+            <button id="resumeID" class="resumeClass">*Resume</button>
+            <button id="contactID" class="contactClass">*Contact</button> -->
+        </section>
 
-    </section>
-    <section class="section" id = "s3">
-    <h2>Books I Love</h2>
-    </section>
+        <section class="section" id = "s2">
+            <h1 class="testText">My Projects</h1>
+        </section>
+
+        </section>
+        <section class="section" id = "s3">
+        <h2>Books I Love</h2>
+        </section>
+    </div>
+    <script src="script.js"></script>
 
 </body>
 </html>
