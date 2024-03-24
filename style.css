@@ -66,12 +66,14 @@ body {
   #navbar {
     top: 0;
     width: 100%;
-    position: sticky;
-    background: transparent;
-  
+    position: fixed;
+    background: rgba(2, 22, 46, 0.307);
+    box-shadow: 0 0px 5px rgba(1, 17, 31, 0.812); 
+    /* border-bottom: 0.3px solid rgba(11, 64, 93, 0.733); */
     backdrop-filter: blur(20px);
     font-size: 1.2rem;
-    text-align: center;
+    text-align: right;
+
     overflow: hidden;
     transition: top 2s;
     z-index: 10;
@@ -120,7 +122,7 @@ body {
     margin: auto;
     display: block;
     background: transparent;
-    transition: width .35s ease, background-color .35s ease;
+    /* transition: width .35s ease, background-color .35s ease; */
   }
   .nav-link-ani:hover:after {
     width: 100%;
@@ -134,8 +136,7 @@ body {
     margin: 0;
   }
 
-
-
+  
 
   .firstText {
     height: 15vh;
