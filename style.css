@@ -3,9 +3,9 @@ body {
   padding: 0;
   height: 100vh;
     background: 
-      linear-gradient(21deg, #06142b, #082d3f, #021e30 70.71%),
-      linear-gradient(90deg, #011f03,#06142b, #061427 70.71%),
-      linear-gradient(45deg, #3b1635, #021e30, #06142b 70.71%);
+      linear-gradient(21deg, #020d1d, #04202d74, #02142b 70.71%),
+      linear-gradient(90deg, #021b29,#0a2f6b, #061427 70.71%),
+      linear-gradient(45deg, rgb(6, 18, 70), #021e30, #06142b 70.71%);
     background-size: 400% 400%;
 
     height: 100vh;
@@ -23,31 +23,6 @@ body {
       background-position: 0% 50%, 0% 50%, 0% 50%;
     }
   }
-
-/* 
-@keyframes gradientAn1 {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-@keyframes gradientAn2 {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-} */
 
 /* 
 .canvas {
