@@ -8,6 +8,8 @@ body {
       linear-gradient(45deg, rgb(6, 18, 70), #021e30, #06142b 70.71%);
     background-size: 400% 400%;
 
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
     height: 100vh;
     animation: gradientAnimation 10s ease infinite;
   }
@@ -53,28 +55,86 @@ body {
        url('JetBrainsMono-Lught') format('ttf');
   } */ 
   
-
-  .navbar {
-    display: flex; /* Use flexbox */
-    justify-content: space-between; /* Distribute items evenly */
-    text-align: center; /* Centers the text horizontally */
-    margin-top: 40px; /* Adds space at the top */
-    position: fixed;
-    width: 19%; /* Set width */
-    top: 0; /* Position at the top of the viewport */
-    left: 0;
-    right: 0;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-  .navbar a {
-    margin: 0 3%;
-    padding: 10px 20px; /* Adjust padding as needed */
-    border-radius: 20px; /* Adjust border-radius as needed */
-    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);Semi-transparent background color */
-    text-decoration: none; /* Remove underline */
+  nav {
+    width: 100%;
+    display: flex;
+    background-color: var(--bc-nav-foot);
+    z-index: 5;
+    font-family: 'Inter';
   }
+
+  #navbar {
+    top: 0;
+    width: 100%;
+    position: sticky;
+    background: transparent;
+  
+    backdrop-filter: blur(20px);
+    font-size: 1.2rem;
+    text-align: center;
+    overflow: hidden;
+    transition: top 2s;
+    z-index: 10;
+    
+  }
+  .nav-center {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+  .nav-list {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+  /* -=- Navbar Blocks -=- */
+  .nav-link-ani {
+    display: inline-block;
+    cursor: pointer;
+  }
+  .nav-link-active {
+    display: inline-block;
+    cursor: pointer;
+  }
+  .nav-link-active:after {
+    content: '';
+    width: 100%;
+    height: 3px;
+    margin: auto;
+    display: block;
+    background: var(--primary);
+  }
+  .nav-link-active .nav-link:hover {
+    color: var(--white);
+  }
+  .nav-link {
+    transition: color .35s ease;
+  }
+  .nav-link:hover {
+    color: var(--primary);
+  }
+  .nav-link-ani:after {
+    content: '';
+    width: 0;
+    height: 3px;
+    margin: auto;
+    display: block;
+    background: transparent;
+    transition: width .35s ease, background-color .35s ease;
+  }
+  .nav-link-ani:hover:after {
+    width: 100%;
+    background: var(--primary);
+  }
+  .nav-link {
+    color: var(--white);
+    text-decoration: none;
+    display: inline-block;
+    padding: 1em .9em;
+    margin: 0;
+  }
+
+
 
 
   .firstText {
@@ -91,6 +151,7 @@ body {
     left: 4.5%;
     /* overflow: scroll; */
   }
+  
   
   
   .traitsClass {
