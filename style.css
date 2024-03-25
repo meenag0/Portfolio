@@ -47,7 +47,7 @@ body {
 
 @font-face {
   font-family: 'Inter-Light';
-  src: url('Inter-ExtraLight.woff2') format('woff2');
+  src: url('InterVariable.ttf') format('truetype');
 }
        /* url('triakisfont-regular-webfont.woff') format('woff');
   src: url('JetBrainsMono-Regular') format('ttf'), 
@@ -60,7 +60,9 @@ body {
     display: flex;
     background-color: var(--bc-nav-foot);
     z-index: 5;
-    font-family: 'Inter';
+    font-family: 'Inter-Light';
+    font-weight: 300;
+    color: #fef4f4;
   }
 
   #navbar {
@@ -71,7 +73,7 @@ body {
     /* rgba(2, 22, 46, 0.307); */
     box-shadow: 0 3px 4.5px rgba(1, 17, 31, 0.312); 
     /* border-bottom: 0.3px solid rgba(11, 64, 93, 0.733); */
-    backdrop-filter: blur(30px);
+    backdrop-filter: blur(10px);
     font-size: 1.2rem;
     text-align: right;
 
@@ -82,7 +84,7 @@ body {
   }
   .nav-center {
     margin: 0;
-    padding: 0;
+    padding: 0 1.1em;
     width: 100%;
   }
   .nav-list {
@@ -94,10 +96,15 @@ body {
   .nav-link-ani {
     display: inline-block;
     cursor: pointer;
+    font-size: 0.9em;
+    line-height: 1.5em; 
+
   }
   .nav-link-active {
     display: inline-block;
     cursor: pointer;
+    font-size: 0.9em;
+    line-height: 1.5em; 
   }
   .nav-link-active:after {
     content: '';
@@ -133,24 +140,24 @@ body {
     color: var(--white);
     text-decoration: none;
     display: inline-block;
-    padding: 1em .9em;
-    margin: 0;
+    padding: 0.8em 0.6em ;
+    margin: 0 0em;
   }
 
   
 
   .firstText {
-    height: 15vh;
-    width: 60vw;
+    height: 15rem;
+    width: 60rem;
     position: absolute;
     font-family: 'Inter';
     
     /* letter-spacing: 0.005em; */
     color: rgb(255, 244, 244);
-    font-size: 5.3vw; /* using viewport width for font size */
+    font-size: 5rem; /* using viewport width for font size */
     font-weight: 500;
-    top: 9.5%;
-    left: 4.5%;
+    top: 4.5rem;
+    left: 5.7rem;
     /* overflow: scroll; */
   }
   
@@ -175,42 +182,106 @@ body {
   }
   
    #descriptionId {
-    width: 49%;
+    width: 45rem;
     height: max-content;
     font-family: 'Inter-Light', sans-serif;
-    font-size: 1.26vw;
+    font-size: 1.2rem;
     font-weight: 100;
     color: rgb(235, 230, 230);
     position: absolute;
-    top: 49%; 
-    left: 4.5%;
+    top: 23.5rem; 
+    left: 5.7rem;
   }
     
 
   
-  #s2 {
-    height: 15vh;
-    width: 60vw;
+  .projectsText {
+    height: 15rem; /* Adjusted using rem */
+    width: 60rem; /* Adjusted using rem */
     position: absolute;
-    font-family: JetBrains Mono, serif;
-    /* letter-spacing: 0.005em; */
+    font-family: 'Inter';
+    letter-spacing: 0.008em;
     color: rgb(255, 244, 244);
-    font-size: 4.3vw; /* using viewport width for font size */
-    font-weight: 50;
-    top: 92.5%;
-    left: 4.5%;
+    font-size: 5rem; /* Adjusted using rem */
+    font-weight: 500; /* Adjusted font weight */
+    top: 45rem; /* You may adjust this if needed */
+    left: 5.7rem; /* Adjusted using rem */
+  }
+
+  
+  .ul--reset {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
   }
   
-  #s3 {
+  .vertical-menu {
+    font-family: "Oswald", sans-serif;
+    text-transform: uppercase;
+    width: 20rem; 
+     /* // Avoid jitter on menu item click */
+  }
+  
+  .vertical-menu-wrapper {
+    max-width: 230px;
+    margin: 60rem 0 0 5.7rem; /* Adjust margin values as needed */
+    display: flex;
+    position: relative;
+
+ 
+  }
+  
+  .active-marker {
+    transition: transform 0.4s;
+    width: 5px;
+    background-image: linear-gradient(90deg, #ff5e5e, #f54985);
+    background-size: 100%;
+    height: 30px;
+    margin-right: 7px; /* Spacing between marker and menu items */
+    /* right: auto; Reset right positioning */
+    left: -12px;
+    transform: translateY(0px);
+  }
+  
+  .vertical-menu-item {
+    font-size: 1.1em;
+    color: #fff;
+    transition: all 0.4s;
+    height: 41px;  
+    /* // Define height here to ensure no spacing change on hover effect */ 
+    text-align: left;
+  
+    &.is-active {
+      /* // Note: it's better to use scale or another property change when possible (things that don't trigger repaints) vs font size changes in a transition. */
+      font-size: 1.4em;
+    }
+  }
+  
+  .link--inverse-menu {
+    color: #fff;
+    text-decoration: none;
+  
+    &:visited {
+      color: #fff;
+    }
+  
+    &:hover,
+    &:active {
+      color: #d3d3d3;
+    }
+  }
+  
+
+  /* #s3 {
     height: 15vh;
     width: 60vw;
     position: absolute;
     font-family: JetBrains Mono, serif;
-    /* letter-spacing: 0.005em; */
+    /* letter-spacing: 0.005em; 
     color: rgb(255, 244, 244);
-    font-size: 4.3vw; /* using viewport width for font size */
+    font-size: 4.3vw; /* using viewport width for font size 
     font-weight: 50;
     top: 222.5%;
     left: 4.5%;
-  }
+  } */
   
