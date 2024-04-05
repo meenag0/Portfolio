@@ -34,6 +34,13 @@ body {
   left: 0;
   outline: none;
 } */
+@keyframes grid {
+  0% { font-size: calc(100vw / 24 * 1); }
+  25% { font-size: calc(100vw / 24 * 2); }
+  50% { font-size: calc(100vw / 24 * 3); }
+  75% { font-size: calc(100vw / 24 * 4); }
+  100% { font-size: calc(100vw / 24 * 5); }
+}
 
 @font-face {
   font-family: 'Happy Times NG Italic';
@@ -65,10 +72,18 @@ body {
   font-family: 'NHD-Medium';
   src: url('NeueHaasDisplay-Roman.ttf') format('truetype');
 }
-
+@font-face {
+  font-family: 'NHD-Med';
+  src: url('NeueHaasDisplay-Mediu.ttf') format('truetype');
+}
 @font-face {
   font-family: 'NHD-Black';
   src: url('NeueHaasDisplay-Black.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'NHD-Thin';
+  src: url('NeueHaasDisplay-Thin.ttf') format('truetype');
 }
 
 /* url('triakisfont-regular-webfont.woff') format('woff');
@@ -167,63 +182,66 @@ body {
   }
 
   #myName {
-  height: 15rem;
+    height: min-content;
     width: 60rem;
     position: absolute;
-    font-family: 'NHD-Bold';
-    
-    /* letter-spacing: 0.005em; */
+    font-family: 'NHD-Light';
+    word-spacing: 0.9rem;    
     color: rgb(99, 99, 99);
-    font-size: 2rem; 
+    font-size: 1.6rem; 
     font-weight: 500;
-    top: 4.5rem;
-    left: 5.7rem;
+    top: 6.2rem;
+    left: 6.4rem;
+    
   }
 
   #nameText {
-    height: 15rem;
-    width: 60rem;
+    height: min-content;
+    width: 30rem;
     position: absolute;
-    font-family: 'NHD-Bold';
-    
+    font-family: 'NHD-Black';
+    text-transform: uppercase;
     /* letter-spacing: 0.005em; */
     color: rgb(0, 0, 0);
-    font-size: 5rem; 
-    font-weight: 500;
-    top: 4.5rem;
+    font-size: 11rem; 
+    top: 0.3rem;
     left: 5.7rem;
+    filter: url(#distortionFilter);
+    font-size: grid(3);
+    color: #0e0e0e;
+    /* font-variation-settings: "wght" 700; */
+    @media (max-width: 800px) {
+      font-size: 8rem;
+    }
     /* overflow: scroll; */
   }
   
   
-  .traitsClass {
+  #traitsBox {
+    position: absolute;
+    top: 17rem;
+    left: 5.7rem;
     color: rgb(18, 107, 154);
+    font-size: 5rem; 
     text-decoration-thickness: 0.2rem;
-    font-weight: 550;
+    font-family: 'Inter';
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-align: left;
   }
   
 
-  .cursorIcon {
-    color: rgb(18, 107, 154);
-    border-right: .05em solid;
-    animation: caret 1s steps(1) infinite;
-  }
-  
-  @keyframes caret {
-    50% {
-      border-color: transparent;
-    }
-  }
   
    #descriptionId {
     width: 45rem;
-    height: max-content;
+    height: min-content;
     font-family: 'NHD-Light';
     font-size: 1.2rem;
     font-weight: 100;
     color: rgb(0, 0, 0);
     position: absolute;
-    top: 23.5rem; 
+    top: 28rem; 
     left: 5.7rem;
   }
     
@@ -236,7 +254,8 @@ body {
     font-family: 'NHD-Bold';
     letter-spacing: 0.008em;
     color: rgb(0, 0, 0);
-    font-size: 5rem; 
+    font-size: 7rem; 
+    text-transform: uppercase;
     font-weight: 500; 
     top: 45rem; 
     left: 5.7rem;
@@ -251,8 +270,9 @@ body {
 
   
   .vertical-menu {
+
     font-size: 3em;
-    margin: 57rem 0 0 5.7rem;
+    margin: 63rem 0 0 5.7rem;
     width: 30rem; 
     color: #000000;
 

@@ -1,44 +1,80 @@
+const textArray = ["DEVELOPER", "ENGINEER", "CREATIVE"];
+const traitsBox = document.getElementById("traitsBox");
+const title = document.getElementById("nameText"); 
 
-document.addEventListener('DOMContentLoaded', function () {
-    console.log("DOM content loaded");
+let currentIndex = 0;
+let currentText = "";
+let letterIndex = 0;
+let scrambleInterval;
 
-
-    const typedTextSpan = document.querySelector(".traitsClass"); // Change to class selector
-    const cursorSpan = document.querySelector(".cursorIcon"); // Change to class selector
-
-    const textArray = ["Creative", "Passionate", "Inquisitive"];
-    const typingDelay = 150;
-    const erasingDelay = 100;
-    const newTextDelay = 2000;
-    let textArrayIndex = 0;
-    let charIndex = 0;
-
-    function type() {
-        if (charIndex < textArray[textArrayIndex].length) {
-            if (!cursorSpan.classList.contains("typing")) cursorSpan.classList.add("typing");
-            typedTextSpan.textContent += textArray[textArrayIndex].charAt(charIndex);
-            charIndex++;
-            setTimeout(type, typingDelay);
+function startScramble() {
+    scrambleInterval = setInterval(() => {
+        if (letterIndex <= textArray[currentIndex].length) {
+            scrambleWord();
         } else {
-            cursorSpan.classList.remove("typing");
-            setTimeout(erase, newTextDelay);
+            // If reached end of current word, pause for 1 second before transitioning to the next word
+            setTimeout(() => {
+                currentIndex = (currentIndex + 1) % textArray.length;
+                letterIndex = 0;
+            }, 1000); 
         }
+    }, 150);
+}
+
+function scrambleWord() {
+    currentText = textArray[currentIndex].slice(0, letterIndex);
+    for (let i = letterIndex; i < textArray[currentIndex].length; i++) {
+        currentText += randomChar(); // Replace remaining characters with random ones
     }
+    traitsBox.textContent = currentText;
+    letterIndex++;
+}
 
-    function erase() {
-        if (charIndex > 0) {
-            if (!cursorSpan.classList.contains("typing")) cursorSpan.classList.add("typing");
-            typedTextSpan.textContent = textArray[textArrayIndex].substring(0, charIndex - 1);
-            charIndex--;
-            setTimeout(erase, erasingDelay);
-        } else {
-            cursorSpan.classList.remove("typing");
-            textArrayIndex++;
-            if (textArrayIndex >= textArray.length) textArrayIndex = 0;
-            setTimeout(type, typingDelay + 1100);
-        }
-    }
+function randomChar() {
+    const characters = "01";
+    return characters.charAt(Math.floor(Math.random() * characters.length));
+}
 
-    if (textArray.length) setTimeout(type, newTextDelay + 250);
 
-});
+// Hover effect on nameText
+if (title) {
+    title.addEventListener("mouseenter", () => {
+        gsap.to(".distort feDisplacementMap", 1, {
+            attr: {
+                scale: 45
+            },
+            ease: "circ.out"
+        });
+        gsap.to(".distort feTurbulence", 1, {
+            attr: {
+                baseFrequency: '2.08 .08'
+            },
+            ease: "circ.out"
+        }, 1);
+        gsap.to(title, 1, {
+            fontVariationSettings: "'wght' 650",
+            ease: "back.out"
+        });
+    });
+    title.addEventListener("mouseleave", () => {
+        gsap.to(".distort feDisplacementMap", 1, {
+            attr: {
+                scale: 0
+            },
+            ease: "circ.out"
+        }, 1);
+        gsap.to(".distort feTurbulence", 1, {
+            attr: {
+                baseFrequency: '2.01 .01'
+            },
+            ease: "circ.out"
+        }, 1);
+        gsap.to(title, 1, {
+            fontVariationSettings: "'wght' 700",
+            ease: "back.out"
+        }, 1);
+    });
+}
+
+
+startScramble();
