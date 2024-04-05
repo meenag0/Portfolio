@@ -1,16 +1,17 @@
 body {
   margin: 0;
   padding: 0;
-  height: 100vh;
-    background: 
+  height: 100rem;
+  background-color: #f1f4fa;
+    /* background: 
+
       linear-gradient(21deg, #020d1d, #04202d74, #02142b 70.71%),
       linear-gradient(90deg, #021b29,#0a2f6b, #061427 70.71%),
-      linear-gradient(45deg, rgb(6, 18, 70), #021e30, #06142b 70.71%);
+      linear-gradient(45deg, rgb(6, 18, 70), #021e30, #06142b 70.71%); */
     background-size: 400% 400%;
 
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
-    height: 100vh;
     animation: gradientAnimation 10s ease infinite;
   }
   
@@ -49,7 +50,28 @@ body {
   font-family: 'Inter-Light';
   src: url('InterVariable.ttf') format('truetype');
 }
-       /* url('triakisfont-regular-webfont.woff') format('woff');
+
+@font-face {
+  font-family: 'NHD-Bold';
+  src: url('NeueHaasDisplay-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'NHD-Light';
+  src: url('NeueHaasDisplay-Light.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'NHD-Medium';
+  src: url('NeueHaasDisplay-Roman.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'NHD-Black';
+  src: url('NeueHaasDisplay-Black.ttf') format('truetype');
+}
+
+/* url('triakisfont-regular-webfont.woff') format('woff');
   src: url('JetBrainsMono-Regular') format('ttf'), 
        url('JetBrainsMono-SemiBold') format('ttf'),
        url('JetBrainsMono-Lught') format('ttf');
@@ -62,7 +84,7 @@ body {
     z-index: 5;
     font-family: 'Inter-Light';
     font-weight: 300;
-    color: #fef4f4;
+    color: #000;
   }
 
   #navbar {
@@ -71,7 +93,7 @@ body {
     position: fixed;
     background: transparent;
     /* rgba(2, 22, 46, 0.307); */
-    box-shadow: 0 3px 4.5px rgba(1, 17, 31, 0.312); 
+    /* box-shadow: 0 3px 4.5px rgba(1, 17, 31, 0.312);  */
     /* border-bottom: 0.3px solid rgba(11, 64, 93, 0.733); */
     backdrop-filter: blur(10px);
     font-size: 1.2rem;
@@ -144,17 +166,29 @@ body {
     margin: 0 0em;
   }
 
-  
+  #myName {
+  height: 15rem;
+    width: 60rem;
+    position: absolute;
+    font-family: 'NHD-Bold';
+    
+    /* letter-spacing: 0.005em; */
+    color: rgb(99, 99, 99);
+    font-size: 2rem; 
+    font-weight: 500;
+    top: 4.5rem;
+    left: 5.7rem;
+  }
 
-  .firstText {
+  #nameText {
     height: 15rem;
     width: 60rem;
     position: absolute;
-    font-family: 'Inter';
+    font-family: 'NHD-Bold';
     
     /* letter-spacing: 0.005em; */
-    color: rgb(255, 244, 244);
-    font-size: 5rem; /* using viewport width for font size */
+    color: rgb(0, 0, 0);
+    font-size: 5rem; 
     font-weight: 500;
     top: 4.5rem;
     left: 5.7rem;
@@ -162,15 +196,15 @@ body {
   }
   
   
-  
   .traitsClass {
-    color: greenyellow;
+    color: rgb(18, 107, 154);
     text-decoration-thickness: 0.2rem;
     font-weight: 550;
   }
   
+
   .cursorIcon {
-    color: greenyellow;
+    color: rgb(18, 107, 154);
     border-right: .05em solid;
     animation: caret 1s steps(1) infinite;
   }
@@ -184,10 +218,10 @@ body {
    #descriptionId {
     width: 45rem;
     height: max-content;
-    font-family: 'Inter-Light', sans-serif;
+    font-family: 'NHD-Light';
     font-size: 1.2rem;
     font-weight: 100;
-    color: rgb(235, 230, 230);
+    color: rgb(0, 0, 0);
     position: absolute;
     top: 23.5rem; 
     left: 5.7rem;
@@ -196,16 +230,16 @@ body {
 
   
   .projectsText {
-    height: 15rem; /* Adjusted using rem */
-    width: 60rem; /* Adjusted using rem */
+    height: 10rem; 
+    width: 60rem;
     position: absolute;
-    font-family: 'Inter';
+    font-family: 'NHD-Bold';
     letter-spacing: 0.008em;
-    color: rgb(255, 244, 244);
-    font-size: 5rem; /* Adjusted using rem */
-    font-weight: 500; /* Adjusted font weight */
-    top: 45rem; /* You may adjust this if needed */
-    left: 5.7rem; /* Adjusted using rem */
+    color: rgb(0, 0, 0);
+    font-size: 5rem; 
+    font-weight: 500; 
+    top: 45rem; 
+    left: 5.7rem;
   }
 
   
@@ -214,74 +248,55 @@ body {
     margin: 0;
     padding: 0;
   }
+
   
   .vertical-menu {
-    font-family: "Oswald", sans-serif;
-    text-transform: uppercase;
-    width: 20rem; 
-     /* // Avoid jitter on menu item click */
-  }
-  
-  .vertical-menu-wrapper {
-    max-width: 230px;
-    margin: 60rem 0 0 5.7rem; /* Adjust margin values as needed */
-    display: flex;
-    position: relative;
+    font-size: 3em;
+    margin: 57rem 0 0 5.7rem;
+    width: 30rem; 
+    color: #000000;
 
- 
   }
-  
-  .active-marker {
-    transition: transform 0.4s;
-    width: 5px;
-    background-image: linear-gradient(90deg, #ff5e5e, #f54985);
-    background-size: 100%;
-    height: 30px;
-    margin-right: 7px; /* Spacing between marker and menu items */
-    /* right: auto; Reset right positioning */
-    left: -12px;
-    transform: translateY(0px);
+
+  .vertical-menu-item::before {
+    content: "\2733"; /* FLOWER PUNCTUATION MARK */
+    margin-right: 0.2em; 
   }
   
   .vertical-menu-item {
-    font-size: 1.1em;
-    color: #fff;
-    transition: all 0.4s;
-    height: 41px;  
-    /* // Define height here to ensure no spacing change on hover effect */ 
+    /* transition: all 0.4s; */
+    height: 85px;  
     text-align: left;
   
-    &.is-active {
-      /* // Note: it's better to use scale or another property change when possible (things that don't trigger repaints) vs font size changes in a transition. */
-      font-size: 1.4em;
-    }
   }
   
   .link--inverse-menu {
-    color: #fff;
+    color: #000;
     text-decoration: none;
+    font-family: 'NHD-Medium';
+
+    /* &:visited {
+      color: #000;
+    } */
   
-    &:visited {
-      color: #fff;
-    }
-  
-    &:hover,
-    &:active {
-      color: #d3d3d3;
+    &:hover
+    /* &:active  */
+    {
+      color: #c0bbbb;
     }
   }
   
-
-  /* #s3 {
-    height: 15vh;
+/* 
+  #s3 {
+    height: 20rem;
     width: 60vw;
     position: absolute;
     font-family: JetBrains Mono, serif;
-    /* letter-spacing: 0.005em; 
+    letter-spacing: 0.005em; 
     color: rgb(255, 244, 244);
-    font-size: 4.3vw; /* using viewport width for font size 
+    font-size: 4.3vw; 
     font-weight: 50;
     top: 222.5%;
     left: 4.5%;
-  } */
-  
+  }
+   */
