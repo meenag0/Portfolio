@@ -182,30 +182,25 @@ body {
   }
 
   #myName {
-    height: min-content;
-    width: 60rem;
-    position: absolute;
+    height: max-content;
+    width: max-content;
+    position: relative;
     font-family: 'NHD-Light';
     word-spacing: 0.9rem;    
     color: rgb(99, 99, 99);
     font-size: 1.6rem; 
     font-weight: 500;
-    top: 6.2rem;
-    left: 6.4rem;
-    
+    margin: 8.3rem 60rem 0rem 7.7% ;
   }
 
   #nameText {
-    height: min-content;
-    width: 30rem;
-    position: absolute;
+    margin: 0rem 0rem -0.8rem 7% ;
+    width: max-content;
+    position: relative;
     font-family: 'NHD-Black';
     text-transform: uppercase;
-    /* letter-spacing: 0.005em; */
     color: rgb(0, 0, 0);
     font-size: 11rem; 
-    top: 0.3rem;
-    left: 5.7rem;
     filter: url(#distortionFilter);
     font-size: grid(3);
     color: #0e0e0e;
@@ -213,20 +208,17 @@ body {
     @media (max-width: 800px) {
       font-size: 8rem;
     }
-    /* overflow: scroll; */
   }
   
   
   #traitsBox {
-    position: absolute;
-    top: 17rem;
-    left: 5.7rem;
+    margin: 0rem 0rem 4rem 7%;
+    position:relative;
     color: rgb(18, 107, 154);
     font-size: 5rem; 
     text-decoration-thickness: 0.2rem;
     font-family: 'Inter';
     display: inline-block;
-    overflow: hidden;
     white-space: nowrap;
     text-align: left;
   }
@@ -234,33 +226,35 @@ body {
 
   
    #descriptionId {
-    width: 45rem;
+    /* width: 45rem; */
     height: min-content;
     font-family: 'NHD-Light';
     font-size: 1.2rem;
     font-weight: 100;
     color: rgb(0, 0, 0);
-    position: absolute;
-    top: 28rem; 
-    left: 5.7rem;
+    position: relative;
+    margin: 0rem 45% 0rem 7%;
+    overflow-x: hidden;
+
   }
     
-
-  
   .projectsText {
-    height: 10rem; 
-    width: 60rem;
-    position: absolute;
+
+    margin: 10rem 6rem 0rem 7%;
+    position: relative;
     font-family: 'NHD-Bold';
     letter-spacing: 0.008em;
     color: rgb(0, 0, 0);
     font-size: 7rem; 
     text-transform: uppercase;
     font-weight: 500; 
-    top: 45rem; 
-    left: 5.7rem;
-  }
 
+  }
+  
+  .project-container {
+    display: flex;
+    /* justify-content: space-between;  */
+  }
   
   .ul--reset {
     list-style-type: none;
@@ -270,12 +264,11 @@ body {
 
   
   .vertical-menu {
-
     font-size: 3em;
-    margin: 63rem 0 0 5.7rem;
-    width: 30rem; 
+    margin-left:  7%;
+    margin: 5% 2% 0 7%;
     color: #000000;
-
+    flex: auto;
   }
 
   .vertical-menu-item::before {
@@ -285,9 +278,8 @@ body {
   
   .vertical-menu-item {
     /* transition: all 0.4s; */
-    height: 85px;  
     text-align: left;
-  
+    margin: 0 0 7% 0;
   }
   
   .link--inverse-menu {
@@ -306,17 +298,90 @@ body {
     }
   }
   
-/* 
-  #s3 {
-    height: 20rem;
-    width: 60vw;
-    position: absolute;
-    font-family: JetBrains Mono, serif;
-    letter-spacing: 0.005em; 
-    color: rgb(255, 244, 244);
-    font-size: 4.3vw; 
-    font-weight: 50;
-    top: 222.5%;
-    left: 4.5%;
+  #projectItems {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* overflow: hidden;  */
+    width:50%;
+    margin: 5% 2% 0 0%;
+    flex-direction: column; 
+    flex: auto;
   }
-   */
+  
+  /* .project-grid {
+    display: flex;
+    align-items: center;
+  } */
+  
+  #toolsInfo {
+    display: flex;
+    flex: auto;
+    align-items: flex-start;
+    margin-bottom: 1rem; 
+}
+
+#projectInfo {
+  display: flex;
+  align-items: center;
+   margin: 0 2% 0 0%; 
+}
+
+#projectImage {
+  margin: 0rem 0% 0rem 5%; 
+}
+
+  #toolsDescription, #projectDescription {
+    font-family: 'NHD-Light';
+    font-size: 1.2rem;
+    color: rgb(0, 0, 0);
+    margin-top: 1rem;
+    outline: 1px solid rgb(168, 164, 164); 
+    padding: 0.5rem; 
+    border-radius: 8px;
+  }
+
+  
+  
+  .slide-in {
+    animation: slideInFromRight 0.5s forwards;
+  }
+  
+  .slide-out {
+    animation: slideOutToRight 0.5s forwards;
+  }
+  
+  @keyframes slideInFromRight {
+    from {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideOutToRight {
+    from {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    to {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+  }
+
+  #expText {
+
+    margin: 7rem 6rem 0rem 7%;
+    position: relative;
+    font-family: 'NHD-Bold';
+    letter-spacing: 0.008em;
+    color: rgb(0, 0, 0);
+    font-size: 7rem; 
+    text-transform: uppercase;
+    font-weight: 500; 
+  }
+  
