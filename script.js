@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const projectImage = document.getElementById('projectImage');
     const projectDescription = document.getElementById('projectDescription');
     const menuItems = document.querySelectorAll('.vertical-menu-item');
-    const toolsDescription = document.getElementById('toolsDescription'); 
+    const toolsDescription = document.getElementById('tools'); 
 
 
     const projectDescriptions = {
@@ -53,41 +53,62 @@ document.addEventListener('DOMContentLoaded', function() {
         'snake-game': "Snake Game is a classic arcade game implemented using HTML, CSS, and JavaScript."
     };
 
+    const toolsDescriptions = {
+        'cine-fm': "python \n pandas \n numpy \n scikitlearn \n streamlit \n rfargrg \n saggfsg \n fsfgfgbg",
+        'ecotrackr': "python \n pandas \n numpy \n scikitlearn \n streamlit \n rfargrg \n saggfsg \n fsfgfgbg",
+        'rust-web-crawler': "Rust Web Crawler is a command-line tool built with Rust programming language for scraping and crawling websites.",
+        'portfolio-website': "Portfolio Website is a personal portfolio showcasing skills, projects, and achievements of the developer.",
+        'snake-game': "Snake Game is a classic arcade game implemented using HTML, CSS, and JavaScript."
+    };
 
-    menuItems.forEach(function (menuItem) {
-      menuItem.addEventListener('click', function (event) {
-        event.preventDefault(); 
-    
-        // Remove any previously selected menu item
-        menuItems.forEach(function (item) {
-          item.classList.remove('selected');
-        });
-    
-        this.classList.add('selected');
-    
-        const projectName = this.getAttribute('data-project');
-    
+    function showProjectItems(projectName) {
         // Set the project image source and description
         projectImage.src = `images/${projectName}.png`; 
         projectImage.alt = `${projectName} Image`; 
         projectDescription.textContent = projectDescriptions[projectName];
-        toolsDescription.textContent = `Tools used for ${projectName}`; 
-
-        // Show the project items
-        projectItems.style.display = 'block';
-    
-        // Apply slide-in animation
-        projectItems.classList.remove('slide-out'); 
-        projectItems.classList.add('slide-in');
-    
+        toolsDescription.textContent = toolsDescriptions[projectName]; 
+      
         // Slide out animation for previous project items
-        const previousProjectItems = document.querySelectorAll('.project-grid.slide-in');
+        const previousProjectItems = document.querySelectorAll('.project.slide-in');
         previousProjectItems.forEach(function (item) {
           item.classList.remove('slide-in');
           item.classList.add('slide-out');
         });
-      });
-    });
+      
+        setTimeout(function() {
+
+            projectItems.style.display = 'block';
+      
+          projectItems.classList.remove('slide-out');
+      
+          // Add slide-in class 
+          projectItems.classList.add('slide-in');
+        }, 500); 
+      }
+      
+      function setupMenuItems() {
+        menuItems.forEach(function (menuItem) {
+          menuItem.addEventListener('click', function (event) {
+            event.preventDefault(); 
+      
+            // Remove any previously selected menu item
+            menuItems.forEach(function (item) {
+              item.classList.remove('selected');
+            });
+      
+            this.classList.add('selected');
+      
+            const projectName = this.getAttribute('data-project');
+      
+            showProjectItems(projectName);
+          });
+        });
+      
+        // Initially show the project items
+        showProjectItems(menuItems[0].getAttribute('data-project'));
+      }
+      
+      setupMenuItems();
 
     // Hover effect on nameText
     if (title) {

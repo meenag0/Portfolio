@@ -304,44 +304,71 @@ body {
     justify-content: center;
     /* overflow: hidden;  */
     width:50%;
-    margin: 5% 2% 0 0%;
+    margin: 5% 2% 0 5%;
     flex-direction: column; 
     flex: auto;
   }
   
-  /* .project-grid {
-    display: flex;
-    align-items: center;
-  } */
+
   
   #toolsInfo {
     display: flex;
-    flex: auto;
-    align-items: flex-start;
-    margin-bottom: 1rem; 
+    flex-direction: row; 
+    align-items: center; 
+    /* margin-bottom: 1rem;  */
+    /* width: 80%; */
+
 }
 
-#projectInfo {
-  display: flex;
-  align-items: center;
-   margin: 0 2% 0 0%; 
-}
+  #toolsDescription {
+    display: flex;
+    flex-direction: column;
+    /* align-items: flex-end; */
+  }
 
-#projectImage {
-  margin: 0rem 0% 0rem 5%; 
-}
-
-  #toolsDescription, #projectDescription {
+  #tools {
     font-family: 'NHD-Light';
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     color: rgb(0, 0, 0);
-    margin-top: 1rem;
-    outline: 1px solid rgb(168, 164, 164); 
-    padding: 0.5rem; 
+    border: 0px solid rgb(168, 164, 164); 
+    background-color: rgba(162, 146, 146, 0.1);
+    padding: 1.2rem;
+    border-radius: 8px;
+    text-align: center;
+    margin: 1rem 0 0 0;
+  }
+
+  #projectInfo {
+    display: flex;
+    align-items: center;
+    margin: 1rem 3rem 0 0; 
+  }
+
+  #projectImage {
+    margin: 0rem 3rem 0rem 3rem; 
+  }
+
+  #viewButton {
+    border: 0px solid rgb(168, 164, 164); 
+    background-color: rgba(162, 146, 146, 0.1);
+    width: 100%;
+    padding: 0.7rem;
     border-radius: 8px;
   }
 
-  
+  #projectDescription {
+    font-family: 'NHD-Light';
+    font-size: 1.2rem;
+    color: rgb(0, 0, 0);
+    margin: 1rem 0 0 0;
+    border: 0px solid rgb(168, 164, 164); 
+    background-color: rgba(162, 146, 146, 0.1);
+    padding: 0.8rem; 
+    border-radius: 8px;
+    
+  }
+
+
   
   .slide-in {
     animation: slideInFromRight 0.5s forwards;
@@ -385,3 +412,90 @@ body {
     font-weight: 500; 
   }
   
+  #flexExp {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    margin: 4rem 5% 0 7%;
+  }
+  
+  .exp1,
+  .exp2,
+  .exp3 {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    background-color: #ccdacd;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .exp-content {
+    flex: 0 1 70%; 
+  }
+  
+  .exp-skills {
+    flex: 0 1 30%; 
+  }
+  
+  .exp1 h2,
+  .exp2 h2,
+  .exp3 h2 {
+    color: #333;
+  }
+  
+  .exp1 p,
+  .exp2 p,
+  .exp3 p {
+    color: #666;
+    margin-right: 3rem;
+    font-family: 'NHD-Medium';
+  }
+  
+  .exp1 p:last-child,
+  .exp2 p:last-child,
+  .exp3 p:last-child {
+    margin-bottom: 0;
+  }
+
+
+
+.connectGrid {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 7rem;
+}
+
+#connectText {
+  flex: auto;
+  margin: 0rem 20% 0 5%; 
+}
+
+#connectContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#interestText,
+#contactInfo {
+  background-color: #f2f2f2; 
+  padding: 20px; 
+  margin-bottom: 20px; 
+}
+
+#interestText h2,
+#contactInfo h2 {
+  color: #333; 
+}
+
+#interestText p,
+#contactInfo p {
+  color: #666; 
+}
+
+#interestText p:last-child,
+#contactInfo p:last-child {
+  margin-bottom: 0; 
+}
