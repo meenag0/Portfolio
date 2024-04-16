@@ -20,6 +20,7 @@
     <nav id="navbar">
         <div class="nav-center">
           <ul class="nav-list">
+            <li class="nav-item"><a class="nav-link"><i class="uil-home-name"></i>meena gopalakrishnan</a></li>
             <li class="nav-link-active"><a class="nav-link"><i class="uil uil-home-alt"></i>home</a></li>
             <li class="nav-link-ani"><a class="nav-link" href=""><i class="uil uil-work"></i>projects</a></li>
             <li class="nav-link-ani"><a class="nav-link" href=""><i class="uil uil-resume"></i>resume</a></li>
@@ -38,20 +39,22 @@
 
     <div class="main"> 
         <section class="section" id = "s1">
-          <p class="firstText" id="myName">Hi, my name is</p>
-          <h1 class="firstText" id="nameText">Meena</h1> 
-          <svg class="distort" style="position: absolute; width: 0; height: 0;">
-            <filter id="distortionFilter">
-              <feTurbulence type="fractalNoise" baseFrequency="2.01 .01" numOctaves="5" seed="2" stitchTiles="noStitch" x="0%" y="0%" width="100%" height="100%" result="noise"></feTurbulence>
-              <feDisplacementMap in="SourceGraphic" in2="noise" scale="0" xChannelSelector="R" yChannelSelector="B" x="0%" y="0%" width="100%" height="100%" filterUnits="userSpaceOnUse"></feDisplacementMap>
-            </filter>
-          </svg>          
-          <h2 id="traitsBox" class="traitsClass"></h2>
-          <p id="descriptionId" class="descriptionClass">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <br><br> Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          </p>
+          <div class="left-content">
 
+            <p class="firstText" id="myName">Hi, my name is</p>
+            <h1 class="firstText" id="nameText">Meena</h1> 
+            <svg class="distort" style="position: absolute; width: 0; height: 0;">
+              <filter id="distortionFilter">
+                <feTurbulence type="fractalNoise" baseFrequency="2.01 .01" numOctaves="5" seed="2" stitchTiles="noStitch" x="0%" y="0%" width="100%" height="100%" result="noise"></feTurbulence>
+                <feDisplacementMap in="SourceGraphic" in2="noise" scale="0" xChannelSelector="R" yChannelSelector="B" x="0%" y="0%" width="100%" height="100%" filterUnits="userSpaceOnUse"></feDisplacementMap>
+              </filter>
+            </svg>          
+            <h2 id="traitsBox" class="traitsClass"></h2>
+            <p id="descriptionId" class="descriptionClass">
+              Currently studying Computer Engineering at the University of Waterloo, I strive to solve problems through computers and code.  In the past, I have delved into full stack development, machine learning, computer systems development and deep learning, and am always looking for new technologies to tinker with. I enjoy integrating my love for science, art and music with my passion for coding to create cool and useful projects. <br><br> I'm always seeking opportunities to grow my technical toolkit. When I’m not at my computer, you can find me curating playlists, trying to learn the guitar, or biking around. 
+            </p>
 
+          </div>
         </section>
 
         <section class="section" id = "s2">
@@ -64,8 +67,9 @@
               <li class="vertical-menu-item" data-project="ecotrackr"><a class="link--inverse-menu" href="#">EcoTrackr</a></li>
               <li class="vertical-menu-item" data-project="rust-web-crawler"><a class="link--inverse-menu" href="#">Rust Web Crawler</a></li>
               <li class="vertical-menu-item" data-project="portfolio-website"><a class="link--inverse-menu" href="#">Portfolio Website</a></li>
-              <li class="vertical-menu-item" data-project="snake-game"><a class="link--inverse-menu" href="#">Snake Game</a></li>
-              
+              <li class="vertical-menu-item" data-project="flappy-bird"><a class="link--inverse-menu" href="#">Flappy Bird</a></li>
+              <li class="vertical-menu-item" data-project="terrain-classification"><a class="link--inverse-menu" href="#">Road Surface Segmentation </a></li>
+   
             </ul>
 
             <div class="project" id="projectItems">
@@ -88,28 +92,28 @@
           <h2 id="expText">Experience</h2>
           <div id="flexExp"> 
             
-            <div class="exp1" id="exp1">
+            <div class="exp" id="exp1">
               <div class="exp-content">
-                <h2 id="exp1Title">Lorem</h2>
-                <p id="exp1Text">Lorem</p>
+                <p id="expTitle">Lorem</p>
+                <p id="expiText">Lorem</p>
               </div>
               <div class="exp-skills" id="exp1Skills">
                 Lorem
               </div>            
             </div>
 
-            <div class="exp2" id="exp2">
+            <div class="exp" id="exp2">
               <div class="exp-content">
-                <h2 id="exp2Title">Lorem</h2>
-                <p id="exp2Text">Lorem</p>
+                <p id="expTitle">Lorem</p>
+                <p id="expiText">Lorem</p>
               </div>
               <div class="exp-skills" id="exp2Skills">Lorem</div>
             </div>
 
-            <div class="exp3" id="exp3">
+            <div class="exp" id="exp3">
               <div class="exp-content">
-                <h2 id="exp3Title">Lorem</h2>
-                <p id="exp3Text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolo anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et</p>
+                <p id="expTitle">Lorem</p>
+                <p id="expiText">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolo anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et</p>
               </div>
               <div class="exp-skills" id="exp3Skills">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolo anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
