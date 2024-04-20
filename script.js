@@ -1,3 +1,9 @@
+import React, { StrictMode, useRef, useMemo, useEffect } from 'react';
+import { createRoot } from 'react-dom/client';
+import { Canvas, useFrame } from '@react-three/fiber';
+import { OrbitControls } from '@react-three/drei';
+import { AdditiveBlending, Vector3 } from 'three';
+import { Application } from '@splinetool/runtime';
 
 document.addEventListener('DOMContentLoaded', function() {
 
@@ -99,19 +105,26 @@ document.addEventListener('DOMContentLoaded', function() {
 
     
     const projectDescriptions = {
-        'cine-fm': "Cine.fm is a movie recommendation website where users can discover new movies based on their preferences. coTrackr is a web application designed to help users track their carbon footprint and adopt more sustainable lifestyle choices",
-        'ecotrackr': "EcoTrackr is a web application designed to help users track their carbon footprint and adopt more sustainable lifestyle choices.coTrackr is a web application designed to help users track their carbon footprint and adopt more sustainable lifestyle choices",
-        'rust-web-crawler': "Rust Web Crawler is a command-line tool built with Rust programming language for scraping and crawling websites.",
-        'portfolio-website': "Portfolio Website is a personal portfolio showcasing skills, projects, and achievements of the developer.",
-        'snake-game': "Snake Game is a classic arcade game implemented using HTML, CSS, and JavaScript."
+        'cine-fm': "cine.fm is a web application that uses machine learning to generate a playlist based on the user’s selection from 50,000+ movies. It was developed by conducting sentiment analysis using NLP transformers from hugging face, on the movie-descriptions gathered from wikipedia, and song lyrics acquired through the spotify and genius apis. It utilizes content-based filtering to generate the playlist based on a similarity matrix.",
+        'ecotrackr': "EcoTrackr is a cross-platform mobile app I’m currently working on that allows users to track their carbon footprint, develop habits to live more eco-consciously, and see information related to the environment, such as air quality, solar distribution, and nearby conservatories/trails. It’s built using react-native, utilizing external apis as well as a backend server to implement a RESTful architecture for handling HTTP requests and responses.",
+        'rust-web-crawler': "2Read is a Rust-based web scraping application that generates a reading list by gathering articles from some of my favourite publications-Quanta Magazine, Towards Data Science, Wired, and Scientific American. It utilizes reqwest for HTTP requests, scraper for HTML parsing, and actix-web for building the server. Asynchronous tasks are managed using async-std. The frontend uses Fetch API to asyncly retrieve article data from the server",
+        'portfolio-website': "This is my portfolio website! It showcases my projects, experiences, interests, and more. It’s built using html, javascript, and css, node.js, and Vite. While making this, I also experimented with Three.js, React Three Fibre, and a variety of frameworks. This is a continuous work in progress, and I’ll be continually adding to it. ",
+        'flappy-bird': "This browser-based Flappy Bird game is developed using Javascript, Phaser and HTML. It utilizes Phaser's Arcade physics system to handle game mechanics efficiently. The game features an angry bird sprite that players can control using the up arrow key to navigate through columns without colliding with them or the ground. The game logic continuously updates to check for user input and update the game state accordingly. ",
+        'price-predictor': "This Housing Price Prediction Model uses python and regression models to predict housing prices using the California housing dataset. Pandas is used for data exploration/visualization to understand feature distributions. I encoded the categorical data, and created custom transformers to add attributes to the dataset. Random Forest, Support Vector Machine, and XGBoost are employed for regression tasks, and hyperparameter tuning is performed using Scikit-learn's GridSearchCV.",
+        'mnist': "This is a MNIST classifier to recognize handwritten digits. It splits the data into a training and testing set, and a KNN classifier is then trained on the training data. Model evaluation is performed using cross-validation and the F1 score metric. I used various libraries in python for this, such as Pandas for data manipulation, NumPy for numerical computations, Matplotlib for visualization, and Scikit-learn for machine learning tasks."
+
+
+
     };
     
     const toolsDescriptions = {
         'cine-fm': "python \n pandas \n numpy \n scikitlearn \n streamlit \n rfargrg \n saggfsg \n fsfgfgbg",
-        'ecotrackr': "python \n pandas \n numpy \n sklearn \n streamlit \n rfargrg \n saggfsg \n fsfgfgbg",
-        'rust-web-crawler': "Rust Web Crawler is a command-line tool built with Rust programming language for scraping and crawling websites.",
-        'portfolio-website': "Portfolio Website is a personal portfolio showcasing skills, projects, and achievements of the developer.",
-        'snake-game': "Snake Game is a classic arcade game implemented using HTML, CSS, and JavaScript."
+        'ecotrackr': "react-native \n javascript \n typescript \n fastAPI \n python \n node.js \n expo cli \n REST APIs",
+        'rust-web-crawler': "rust \n javascript \n scraper \n heroku \n serde \n actix web  \n reqwest \n html/css",
+        'portfolio-website': "javascript \n react \n node.js \n gsap \n vite \n three.js \n html/css \n spline",
+        'flappy-bird': "javascript \n phaser \n html/css  \n vscode \n sprites \n assets \n scenes",
+        'price-predictor': "python \n pandas \n numpy \n scikitlearn \n streamlit \n rfargrg \n saggfsg \n fsfgfgbg",
+        'mnist': "python \n pandas \n numpy \n scikitlearn \n streamlit \n rfargrg \n saggfsg \n fsfgfgbg",
     };
     
     function showProjectItems(projectName) {
@@ -190,8 +203,9 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     setupMenuItems();
+
     
     window.addEventListener('scroll', slideInProjectItems);
 
-
+    
 });

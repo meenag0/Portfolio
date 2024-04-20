@@ -16,7 +16,18 @@
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.9.1/dist/ScrambleTextPlugin.min.js"></script>
 
 </head>
-<body>
+<body>    
+  <!-- Import maps polyfill -->
+  <!-- Remove this when import maps will be widely supported -->
+  <script async src="https://unpkg.com/es-module-shims@1.3.6/dist/es-module-shims.js"></script>
+  <script type="importmap">
+    {
+      "imports": {
+        "@splinetool/runtime": "https://unpkg.com/@splinetool/runtime@1.1.3/build/runtime.js"
+      }
+    }
+  </script>
+  <script type="module" src="./src/main.js"></script>
     <nav id="navbar">
         <div class="nav-center">
           <ul class="nav-list">
@@ -39,6 +50,8 @@
 
     <div class="main"> 
         <section class="section" id = "s1">
+          <div class="content-container">
+
           <div class="left-content">
 
             <p class="firstText" id="myName">Hi, my name is</p>
@@ -55,6 +68,12 @@
             </p>
 
           </div>
+
+          <div id="right-content">
+            <canvas id="canvas3d"></canvas>
+
+        </div>
+
         </section>
 
         <section class="section" id = "s2">
@@ -63,12 +82,14 @@
 
           <div class="project-container">
             <ul class="vertical-menu ul--reset">
-              <li class="vertical-menu-item" data-project="cine-fm"><a class="link--inverse-menu" href="#">cine.fm</a></li>
-              <li class="vertical-menu-item" data-project="ecotrackr"><a class="link--inverse-menu" href="#">EcoTrackr</a></li>
-              <li class="vertical-menu-item" data-project="rust-web-crawler"><a class="link--inverse-menu" href="#">Rust Web Crawler</a></li>
-              <li class="vertical-menu-item" data-project="portfolio-website"><a class="link--inverse-menu" href="#">Portfolio Website</a></li>
-              <li class="vertical-menu-item" data-project="flappy-bird"><a class="link--inverse-menu" href="#">Flappy Bird</a></li>
-              <li class="vertical-menu-item" data-project="terrain-classification"><a class="link--inverse-menu" href="#">Road Surface Segmentation </a></li>
+              <li class="vertical-menu-item" data-project="cine-fm"><a class="link--inverse-menu" href="#">cine.fm &#127926;</a></li>
+              <li class="vertical-menu-item" data-project="ecotrackr"><a class="link--inverse-menu" href="#">EcoTrackr &#127793;</a></li>
+              <li class="vertical-menu-item" data-project="rust-web-crawler"><a class="link--inverse-menu" href="#">2Read [Rust] &#128214;</a></li>
+              <li class="vertical-menu-item" data-project="portfolio-website"><a class="link--inverse-menu" href="#">Portfolio &#128187;</a></li>
+              <li class="vertical-menu-item" data-project="flappy-bird"><a class="link--inverse-menu" href="#">Flappy Bird &#128037;</a></li>
+              <li class="vertical-menu-item" data-project="price-predictor"><a class="link--inverse-menu" href="#">Price Predictor &#127968;</a></li>
+              <li class="vertical-menu-item" data-project="mnist"><a class="link--inverse-menu" href="#">MNIST Classify &#9997;</a></li>
+
    
             </ul>
 
@@ -153,7 +174,7 @@
         
     </div>
 
-    <script src="script.js"></script>
+    <script type="module" src="script.js"></script>
 
 
 </body>

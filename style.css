@@ -205,14 +205,58 @@ body {
     margin: 0 0em;
   }
 
-  #section {
-    display: flex;
-  }
+/* #s1 {
+  display: inline-block;
+}
 
-  .left-content {
-    width: 97%;
+.left-content {
+  position: relative;
+}
 
-  }
+.right-content {
+  position: relative;
+  overflow: hidden;
+}
+
+.right-content canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+} */
+
+.content-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.left-content {
+  flex: 1;
+}
+
+.right-content {
+  flex: 1;
+  background-color: #667eea;
+}
+
+/* Adjust the width of the left and right content */
+.left-content {
+  width: 50%;
+  margin-right: 0;
+  margin-left: 3%; /* Adjust this value as needed */
+}
+
+.right-content {
+  position: relative;
+  width: 50%; /* Adjust this value as needed */
+}
+
+canvas {
+  display: block;
+  margin: 12rem 5rem 0 0;
+}
+
 
   #myName {
     height: max-content;
@@ -266,7 +310,7 @@ body {
     font-weight: 100;
     color: rgb(0, 0, 0);
     position: relative;
-    margin: 0rem 45% 0rem 7%;
+    margin: 0rem 10% 0rem 7%;
     overflow-x: hidden;
     word-spacing: 0.07rem;
 
@@ -333,6 +377,7 @@ body {
   .vertical-menu-item::before {
     content: "\2733"; /* FLOWER PUNCTUATION MARK */
     margin-right: 0.2em; 
+    
   }
   
   .vertical-menu-item {
@@ -393,10 +438,11 @@ body {
     color: rgb(0, 0, 0);
     border: 1px solid;
     /* background-color: rgba(162, 146, 146, 0.1); */
-    padding: 1.2rem;
+    padding: 1rem;
     border-radius: 8px;
     text-align: center;
     margin: 0.8rem 0 0 0;
+    white-space: pre-wrap;
   }
 
   #projectInfo {
@@ -439,6 +485,7 @@ body {
     border: 1px solid; 
     padding: 0.8rem; 
     border-radius: 8px;
+    word-spacing: 0.07rem;
     
   }
 
