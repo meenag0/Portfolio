@@ -684,3 +684,56 @@ canvas {
     text-decoration: 3px solid underline ;
   }
   
+  @media screen and (max-width: 768px) {
+    #myName {
+      margin: 2rem 5% 0;
+    }
+  
+    #nameText {
+      font-size: 3rem;
+      margin: 0.5rem 5%;
+    }
+  
+    #traitsBox {
+      font-size: 1.5rem;
+      margin: 1rem 5%;
+    }
+  
+    #descriptionId {
+      font-size: 1rem;
+      margin: 0.5rem 5%;
+    }
+  
+    .projectsText {
+      font-size: 3rem;
+      margin: 2rem 5% 0;
+    }
+  
+    .vertical-menu {
+      font-size: 1.5rem;
+      margin: 0 5% 2rem 5%;
+    }
+  
+    #projectItems {
+      margin: 2rem 2%;
+    }
+  
+    .contactInfo {
+      margin: 0 auto;
+    }
+  
+    .connectText {
+      font-size: 3rem;
+      margin: 2rem 5% 0;
+    }
+  
+    .reachText {
+      font-size: 1.8rem;
+      margin: 0 0 2rem 0;
+    }
+  
+    canvas {
+      margin: 2rem 5% 0;
+      width: 90%;
+    }
+  }
