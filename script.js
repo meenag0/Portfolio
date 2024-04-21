@@ -2,34 +2,7 @@
 
 document.addEventListener('DOMContentLoaded', function() {
 
-    document.getElementById("loading").style.display = "block";
 
-    // Hide loading spinner when page is fully loaded
-    window.addEventListener("load", function () {
-      document.getElementById("loading").style.display = "none";
-    });
-    function preloadImages() {
-        var images = document.images;
-        var imagesTotalCount = images.length;
-        var imagesLoadedCount = 0;
-        
-        function imageLoaded() {
-          imagesLoadedCount++;
-          if (imagesLoadedCount >= imagesTotalCount) {
-            // Hide loading spinner when all images are loaded
-            document.getElementById("loading").style.display = "none";
-          }
-        }
-        
-        for (var i = 0; i < imagesTotalCount; i++) {
-          var imageClone = new Image();
-          imageClone.onload = imageLoaded;
-          imageClone.onerror = imageLoaded;
-          imageClone.src = images[i].src;
-        }
-      }
-      
-      preloadImages();
     const textArray = ["DEVELOPER", "ENGINEER", "INNOVATOR"];
     const traitsBox = document.getElementById("traitsBox");
     const title = document.getElementById("nameText"); 
