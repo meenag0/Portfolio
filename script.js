@@ -167,7 +167,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
 
     
-        projectImage.src = `${projectName}.png`; 
+        projectImage.src = `/assets/${projectName}.png`; 
         projectImage.alt = `${projectName} Image`; 
         projectDescription.textContent = projectDescriptions[projectName];
         toolsDescription.textContent = toolsDescriptions[projectName]; 

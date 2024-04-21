@@ -60,30 +60,30 @@ body {
 
 @font-face {
   font-family: 'NHD-Bold';
-  src: url('NeueHaasDisplay-Bold.ttf') format('truetype');
+  src: url('/assets/NeueHaasDisplay-Bold.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'NHD-Light';
-  src: url('NeueHaasDisplay-Light.ttf') format('truetype');
+  src: url('/assets/NeueHaasDisplay-Light.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'NHD-Medium';
-  src: url('NeueHaasDisplay-Roman.ttf') format('truetype');
+  src: url('/assets/NeueHaasDisplay-Roman.ttf') format('truetype');
 }
 @font-face {
   font-family: 'NHD-Med';
-  src: url('NeueHaasDisplay-Mediu.ttf') format('truetype');
+  src: url('/assets/NeueHaasDisplay-Mediu.ttf') format('truetype');
 }
 @font-face {
   font-family: 'NHD-Black';
-  src: url('NeueHaasDisplay-Black.ttf') format('truetype');
+  src: url('/assets/NeueHaasDisplay-Black.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'NHD-Thin';
-  src: url('NeueHaasDisplay-Thin.ttf') format('truetype');
+  src: url('/assets/NeueHaasDisplay-Thin.ttf') format('truetype');
 }
 
 /* url('triakisfont-regular-webfont.woff') format('woff');
@@ -574,7 +574,7 @@ canvas {
     font-family: 'NHD-Medium';
     font-size: 0.95rem;
     line-height: 1.4rem;
-    color: #0e2058;
+    color: #280d52;
   }
   
   #expTitle {
