@@ -121,7 +121,7 @@ body {
   }
 
   .nav-item {
-    color: var(--white);
+    color:#000;
     font-size: 0.91em;
     line-height: 1.5em; 
     float: left; /* Positions the name on the left side */
@@ -153,58 +153,36 @@ body {
     padding: 0;
     list-style-type: none;
   }
-  /* -=- Navbar Blocks -=- */
-  .nav-link-ani {
-    display: inline-block;
-    cursor: pointer;
-    font-size: 0.9em;
-    line-height: 1.5em; 
 
-  }
+  .nav-link-ani,
   .nav-link-active {
     display: inline-block;
     cursor: pointer;
     font-size: 0.9em;
     line-height: 1.5em; 
   }
-  .nav-link-active:after {
-    content: '';
-    width: 100%;
-    height: 3px;
-    margin: auto;
-    display: block;
-    background: var(--primary);
+  
+  .nav-link-ani:hover {
+    color: #844faf;
   }
-  .nav-link-active .nav-link:hover {
-    color: var(--white);
+  
+  .nav-link-active:hover {
+    color: #844faf;
   }
-  .nav-link {
-    transition: color .35s ease;
-  }
-  .nav-link:hover {
-    color: var(--primary);
-  }
-  .nav-link-ani:after {
-    content: '';
-    width: 0;
-    height: 3px;
-    margin: auto;
-    display: block;
-    background: transparent;
-    /* transition: width .35s ease, background-color .35s ease; */
-  }
-  .nav-link-ani:hover:after {
-    width: 100%;
-    background: var(--primary);
-  }
+
+  
   .nav-link {
     color: var(--white);
     text-decoration: none;
     display: inline-block;
-    padding: 0.8em 0.6em ;
+    padding: 0.8em 0.6em;
     margin: 0 0em;
+    transition: color .35s ease;
   }
-
+  
+  .nav-link-ani .nav-link i {
+    color: var(--white);
+  }
 /* #s1 {
   display: inline-block;
 }
@@ -445,11 +423,18 @@ canvas {
     white-space: pre-wrap;
   }
 
+  #tools:hover {
+    background-image: linear-gradient(to right, #ecd8f6, #f0e7f8, #ecd8f6);      transition: all .4s ease-in-out;
+
+  }
+
   #projectInfo {
     display: flex;
     align-items: center;
     margin: 1rem 3rem 0 0; 
   }
+
+  
 
   #projectImage {
     margin: 0rem 3rem 0rem 3rem; 
@@ -457,9 +442,10 @@ canvas {
 
 
   #viewButton {
-
+    display: block;
+    font-family: 'NHD-Med';
     border: 1px solid; 
-    width: 100%;
+    width: auto;
     padding: 0.7rem;
     border-radius: 8px;
     font-size: 1.2rem;
@@ -467,11 +453,14 @@ canvas {
     letter-spacing: 0.1rem;
     text-align: center;
     cursor: pointer;
+    text-decoration: none;
+    color: #211d1d;
+    margin-bottom: 0.5rem;
     background-image: linear-gradient(to right, #a78cb5, #cfa1fe, #c295eb, #a78cb5);      transition: all .4s ease-in-out;
   }
     #viewButton:hover {
       background-position: 100% 0;  /* Maintain existing positioning */
-      background-image: linear-gradient(to right, #667eea, #d2c6de, #6B8DD6, #8E37D7);      transition: all .4s ease-in-out;
+      background-image: linear-gradient(to right, #486a8b, #d2c6de, #a4aab8, #486a8b);      transition: all .4s ease-in-out;
       -o-transition: all .4s ease-in-out;
       -webkit-transition: all .4s ease-in-out;
       transition: all .4s ease-in-out;
@@ -488,7 +477,11 @@ canvas {
     word-spacing: 0.07rem;
     
   }
+  
+  #projectDescription:hover {
+    background-image: linear-gradient(to right, #ecd8f6, #f4f0f9, #ecd8f6);      transition: all .4s ease-in-out;
 
+  }
 
   
   .slide-in-right {
@@ -579,6 +572,9 @@ canvas {
   .exp-skills {
     flex: 0 1 20%; 
     font-family: 'NHD-Medium';
+    font-size: 0.95rem;
+    line-height: 1.4rem;
+    color: #0e2058;
   }
   
   #expTitle {
@@ -680,11 +676,11 @@ canvas {
     
   }
   
-  .contactInfo button {
+  .reachText {
+    font-family: 'NHD-Medium' ;
+    color: #000;
     margin: 0rem 0 2.6rem 0rem; 
-    border: 0px saddlebrown;
-    background-color: rgba(255, 255, 255, 0);
-    font-size: 2.3rem;
+    font-size: 2.4rem;
     text-decoration: 3px solid underline ;
   }
   

@@ -32,10 +32,10 @@
         <div class="nav-center">
           <ul class="nav-list">
             <li class="nav-item"><a class="nav-link"><i class="uil-home-name"></i>meena gopalakrishnan</a></li>
-            <li class="nav-link-active"><a class="nav-link"><i class="uil uil-home-alt"></i>home</a></li>
-            <li class="nav-link-ani"><a class="nav-link" href=""><i class="uil uil-work"></i>projects</a></li>
-            <li class="nav-link-ani"><a class="nav-link" href=""><i class="uil uil-resume"></i>resume</a></li>
-            <li class="nav-link-ani"><a class="nav-link" href=""><i class="uil uil-connect"></i>connect</a></li>
+            <li class="nav-link-active"><a class="nav-link"><i href="#home" class="uil uil-home-alt"></i>home</a></li>
+            <li class="nav-link-ani"><a class="nav-link" href="#work"><i class="uil uil-work"></i>work</a></li>
+            <li class="nav-link-ani"><a class="nav-link" href="resume.html"><i class="uil uil-resume"></i>resume</a></li>
+            <li class="nav-link-ani"><a class="nav-link" href="#connect"><i class="uil uil-connect"></i>connect</a></li>
           </ul>
         </div>
     </nav>
@@ -82,13 +82,13 @@
 
           <div class="project-container">
             <ul class="vertical-menu ul--reset">
-              <li class="vertical-menu-item" data-project="cine-fm"><a class="link--inverse-menu" href="#">cine.fm &#127926;</a></li>
-              <li class="vertical-menu-item" data-project="ecotrackr"><a class="link--inverse-menu" href="#">EcoTrackr &#127793;</a></li>
-              <li class="vertical-menu-item" data-project="rust-web-crawler"><a class="link--inverse-menu" href="#">2Read [Rust] &#128214;</a></li>
-              <li class="vertical-menu-item" data-project="portfolio-website"><a class="link--inverse-menu" href="#">Portfolio &#128187;</a></li>
-              <li class="vertical-menu-item" data-project="flappy-bird"><a class="link--inverse-menu" href="#">Flappy Bird &#128037;</a></li>
-              <li class="vertical-menu-item" data-project="price-predictor"><a class="link--inverse-menu" href="#">Price Predictor &#127968;</a></li>
-              <li class="vertical-menu-item" data-project="mnist"><a class="link--inverse-menu" href="#">MNIST Classify &#9997;</a></li>
+              <li class="vertical-menu-item" data-project="cine-fm"><a class="link--inverse-menu" href="https://cinefm.streamlit.app/">cine.fm &#127926;</a></li>
+              <li class="vertical-menu-item" data-project="ecotrackr"><a class="link--inverse-menu" href="https://github.com/meenag0/Ecotrackr">EcoTrackr &#127793;</a></li>
+              <li class="vertical-menu-item" data-project="rust-web-crawler"><a class="link--inverse-menu" href="http://www.readthisweek.live/">2Read [Rust] &#128214;</a></li>
+              <li class="vertical-menu-item" data-project="portfolio-website"><a class="link--inverse-menu" href="https://github.com/meenag0/Portfolio">Portfolio &#128187;</a></li>
+              <li class="vertical-menu-item" data-project="flappy-bird"><a class="link--inverse-menu" href="https://github.com/meenag0/flappybird">Flappy Bird &#128037;</a></li>
+              <li class="vertical-menu-item" data-project="price-predictor"><a class="link--inverse-menu" href="https://github.com/meenag0/Housing-Price-Regression-Model">Price Predictor &#127968;</a></li>
+              <li class="vertical-menu-item" data-project="mnist"><a class="link--inverse-menu" href="https://github.com/meenag0/MNIST-Classification">MNIST Classify &#9997;</a></li>
 
    
             </ul>
@@ -96,7 +96,8 @@
             <div class="project" id="projectItems">
                 <div id="toolsInfo" class="toolInfo"> 
                   <div class="toolsDescription">
-                    <button class="toolsDescription" id="viewButton">VIEW&#8599;</button>
+                    <a id="viewButton" data-link="" class="toolsDescription" target="_blank" rel="noopener noreferrer">VIEW&#8599;</a>
+
                     <p class="toolsDescription" id="tools"></p>
                   </div>
                   <img id="projectImage" src="#" class="projectImg">
@@ -115,29 +116,42 @@
             
             <div class="exp" id="exp1">
               <div class="exp-content">
-                <p id="expTitle">Lorem</p>
-                <p id="expiText">Lorem</p>
+                <p id="expTitle">AI Engineer &nbsp; { Microsoft WEA - Azure & AI / University of Waterloo }</p>
+                <p id="expiText">
+                  &rarr; Developed AI pipeline for a finance application using Azure ML and App Services, delivering personalized ETF recommendations <br>
+                  &rarr; Designed ML algorithms on Azure for portfolio analysis and ETF recommendation, increasing portfolio performance by est 15% <br>
+                  &rarr; Planned CI/CD pipelines with Azure DevOps, automating testing and deployment of models, reducing deployment time by est 30%
+                </p>
               </div>
               <div class="exp-skills" id="exp1Skills">
-                Lorem
+                MS Azure &nbsp; • &nbsp; Azure ML <br> Azure App Services &nbsp; • &nbsp; SQL <br> Python &nbsp; • &nbsp; Azure DevOps <br> MS Excel &nbsp; • &nbsp; MS Powerpoint <br> Teamwork &nbsp; • &nbsp; Collaboration
               </div>            
             </div>
 
             <div class="exp" id="exp2">
               <div class="exp-content">
-                <p id="expTitle">Lorem</p>
-                <p id="expiText">Lorem</p>
+                <p id="expTitle">Firmware Engineer &nbsp; { Midnight Sun Design Team - University of Waterloo }</p>
+                <p id="expiText">
+                  &rarr; Collaborated with team to develop/optimize C-based firmware for critical automotive systems <br>
+                  &rarr; Inspected and improved power distribution, battery monitoring, and driver controls <br>
+                  &rarr; Worked on designing improvements for telemetry system for real-time vehicle data tracking
+                </p>
               </div>
-              <div class="exp-skills" id="exp2Skills">Lorem</div>
+              <div class="exp-skills" id="exp2Skills">Docker &nbsp; • &nbsp; C &nbsp; • &nbsp; C++ &nbsp; • &nbsp; Confluence </div>
             </div>
 
             <div class="exp" id="exp3">
               <div class="exp-content">
-                <p id="expTitle">Lorem</p>
-                <p id="expiText">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolo anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et</p>
+                <p id="expTitle">Tutor,&nbsp; Physics & Chemistry &nbsp; {IQuation}</p>
+                <p id="expiText">
+                  &rarr; Tutored high school student in Physics and Chemistry, resulting in a 20% increase in grades <br>
+                  &rarr; Planned and conducted 30+ lessons based on the student’s homework and the curriculum <br>
+                  &rarr; Successfully coordinated lessons with manager and student through timely communication
+                </p>
               </div>
               <div class="exp-skills" id="exp3Skills">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolo anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                Time-management &nbsp; • &nbsp; Planning <br>
+                Organization &nbsp; • &nbsp; Communication
               </div>
               
             </div>
@@ -147,14 +161,16 @@
         <section class="section" id="s4">
           <div class="interestText" id="interestText">
             <p id="int">I'm always interested about</p>
+            <span class="buttonInterests"><p>Machine Learning</p></span>
             <span class="buttonInterests"><p>Cloud Computing</p></span>
-            <span class="buttonInterests"><p>Machine Learning</p></span>
-            <span class="buttonInterests"><p>Machine Learning</p></span>
-            <span class="buttonInterests"><p>Machine Learning</p></span>
-            <span class="buttonInterests"><p>Machine Learning</p></span>
-            <span class="buttonInterests"><p>Machine Learning</p></span>
-            <span class="buttonInterests"><p>Machine Learning</p></span>
-            <span class="buttonInterests"><p>Machine Learning</p></span>
+            <span class="buttonInterests"><p>Neural Networks</p></span>
+            <span class="buttonInterests"><p>Cryptography</p></span>
+            <span class="buttonInterests"><p>Data Science</p></span>
+            <span class="buttonInterests"><p>GUI Development</p></span>
+            <span class="buttonInterests"><p>Generative AI</p></span>
+            <span class="buttonInterests"><p>Sustainability</p></span>
+            <span class="buttonInterests"><p>Music</p></span>
+
           </div>
           
           <div class="connectGrid">
@@ -164,10 +180,10 @@
               </h1>
             </div>
             <div class="contactInfo" id="contactInfo">
-              <button>Email&#8599;</button>
-              <button>LinkedIn&#8599;</button>
-              <button>Github&#8599;</button>
-              <button href="">Kaggle&#8599;</button>
+              <a class="reachText" style="text-decoration: none;">m3gopala@uwaterloo.ca</a>
+              <a class="reachText" href="https://www.linkedin.com/in/meenagopalakrishnan/" target="_blank">LinkedIn&#8599;</a>
+              <a class="reachText" href="https://github.com/meenag0" target="_blank">Github&#8599;</a>
+              <a class="reachText" href="resume.html" target="_blank">Resume&#8599;</a>
             </div>
           </div>
         </section>
