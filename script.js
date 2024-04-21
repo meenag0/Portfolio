@@ -1,9 +1,4 @@
-import React, { StrictMode, useRef, useMemo, useEffect } from 'react';
-import { createRoot } from 'react-dom/client';
-import { Canvas, useFrame } from '@react-three/fiber';
-import { OrbitControls } from '@react-three/drei';
-import { AdditiveBlending, Vector3 } from 'three';
-import { Application } from '@splinetool/runtime';
+
 
 document.addEventListener('DOMContentLoaded', function() {
 
