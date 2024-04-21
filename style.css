@@ -104,8 +104,9 @@ body {
 
   #navbar {
     top: 0;
+    position: relative;
     width: 100%;
-    position: fixed;
+    /* position: fixed; */
     background: transparent;
     /* rgba(2, 22, 46, 0.307); */
     /* box-shadow: 0 3px 4.5px rgba(1, 17, 31, 0.312);  */
@@ -117,15 +118,14 @@ body {
     overflow: hidden;
     transition: top 2s;
     z-index: 10;
-    
   }
 
   .nav-item {
     color:#000;
     font-size: 0.91em;
     line-height: 1.5em; 
-    float: left; /* Positions the name on the left side */
-    margin-left: 15px; /* Adjust margin as needed */
+    float: left;
+    margin-left: 15px; 
   }
 
 
@@ -152,6 +152,7 @@ body {
     margin: 0;
     padding: 0;
     list-style-type: none;
+    flex-wrap: nowrap;
   }
 
   .nav-link-ani,
