@@ -2,7 +2,21 @@
 
 document.addEventListener('DOMContentLoaded', function() {
 
+    function adjustContentMargin() {
+        const navbarHeight = document.getElementById("navbar").offsetHeight;
+        const contentContainer = document.querySelector(".content-container");
+        if (window.innerWidth < 768) {
+          contentContainer.style.marginTop = navbarHeight + "px";
+        } else {
+          contentContainer.style.marginTop = "0";
+        }
+      }
+  
+      adjustContentMargin();
 
+      window.addEventListener("resize", adjustContentMargin);
+
+    
     const textArray = ["DEVELOPER", "ENGINEER", "INNOVATOR"];
     const traitsBox = document.getElementById("traitsBox");
     const title = document.getElementById("nameText"); 

@@ -125,7 +125,7 @@ body {
     font-size: 0.91em;
     line-height: 1.5em; 
     float: left;
-    margin-left: 15px; 
+    margin-left: 2%; 
   }
 
 
@@ -184,6 +184,13 @@ body {
   .nav-link-ani .nav-link i {
     color: var(--white);
   }
+
+  @media screen and (max-width: 768px) {
+    #navbar .nav-item:first-child {
+      display: none;
+    }
+  }
+
 /* #s1 {
   display: inline-block;
 }
@@ -309,8 +316,11 @@ canvas {
   }
   
   .project {
-    opacity: 0; 
-    transition: opacity 0.5s ease, transform 0.5s ease; 
+      opacity: 0;
+      transition: opacity 0.5s ease, transform 0.5s ease;
+      flex-basis: calc(33.33% - 2rem); /* Adjust the width of each project item */
+      margin-bottom: 2rem;
+    
   }
   
   .slide-in {
@@ -331,9 +341,8 @@ canvas {
   
   .project-container {
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between; 
+    justify-content: space-between;
     margin: 5.5% 0 0 0;
   }
   
@@ -383,13 +392,10 @@ canvas {
   
   #projectItems {
     display: flex;
-    flex: 50%;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    /* overflow: hidden;  */
-    margin: 0rem 3rem 2rem 2rem ;
-    
-    flex-direction: column; 
+    margin: 0rem 3rem 2rem 2rem;
     /* flex: auto; */
   }
   
@@ -485,6 +491,7 @@ canvas {
   }
 
   
+  
   .slide-in-right {
     animation: slideInFromRight 0.6s forwards;
   }
@@ -537,7 +544,7 @@ canvas {
     font-family: 'NHD-Bold';
     letter-spacing: 0.008em;
     color: rgb(0, 0, 0);
-    font-size: 7rem; 
+    font-size: 8vw; 
     text-transform: uppercase;
     font-weight: 500; 
   }
@@ -735,6 +742,6 @@ canvas {
   
     canvas {
       margin: 2rem 5% 0;
-      width: 90%;
+      width: 70%;
     }
   }
