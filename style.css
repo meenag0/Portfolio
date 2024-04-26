@@ -239,8 +239,8 @@ body {
 }
 
 canvas {
-  display: block;
-  margin: 12rem 5rem 0 0;
+  /* display: block; */
+  margin: 12.3rem 5rem 0 0;
 }
 
 
@@ -314,7 +314,7 @@ canvas {
   .project {
       opacity: 0;
       transition: opacity 0.5s ease, transform 0.5s ease;
-      flex-basis: calc(33.33% - 2rem); /* Adjust the width of each project item */
+      flex-basis: calc(33.33% - 2rem); 
       margin-bottom: 2rem;
     
   }
@@ -687,8 +687,10 @@ canvas {
     font-size: 2.4rem;
     text-decoration: 3px solid underline ;
   }
+
+
   
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1008px) {
     #myName {
       font-size: 3.5vw;
 
@@ -708,7 +710,7 @@ canvas {
   
     .projectsText {
       font-size: 3rem;
-      margin: 2rem 5% 0;
+      /* margin: 2rem 5% 0; */
     }
   
     .vertical-menu {
@@ -725,37 +727,53 @@ canvas {
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      margin: 0rem 3rem 2rem 2rem;
+      margin: 20vw 0rem 2rem 0rem;
     }
-  
+    
+    .project-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center; 
+      width: 100%; 
+    }
+
     #toolsInfo {
       display: flex;
       flex-direction: column;
       align-items: center;
-      margin: 0.5rem 0;
+      /* margin: 0.5rem 0; */
     }
   
     #projectInfo {
-      display: flex;
-      flex-direction: co;
+      /* display: flex; */
+      /* flex-direction: column; */
+      align-items: center;
+      justify-content: center;
       align-items: center;
       margin: 1rem 0;
     }
   
     #projectImage {
       width: 100%;
-      margin-bottom: 1rem;
+      /* margin-bottom: 1rem; */
     }
   
     #projectDescription {
-      width: 100%;
-      margin-bottom: 1rem;
+      /* width: 100%; */
+      margin-bottom: 0 0 0 0;
+      justify-content: center;
+      align-items: center;
+
     }
   
     #viewButton {
       order: 1;
-      margin-bottom: 1rem;
-      width: 100%;
+      /* margin-bottom: 1rem; */
+      width: 90vw;
+    }
+
+    #int{
+      font-size: 8.5vw;
     }
   
     .contactInfo {
@@ -764,15 +782,16 @@ canvas {
   
     .connectText {
       font-size: 3rem;
-      margin: 2rem 5% 0;
+      /* margin: 2rem 5% 0; */
     }
   
     .reachText {
       font-size: 1.8rem;
-      margin: 0 0 2rem 0;
+      /* margin: 0 0 2rem 0; */
     }
   
     canvas {
       width: 70%;
+      height: auto;
     }
   }
