@@ -721,23 +721,35 @@ canvas {
     }
   
     #projectItems {
+      display: flex;
       flex-direction: column;
-      margin: 2rem 2%;
+      align-items: center;
+      justify-content: center;
+      margin: 0rem 3rem 2rem 2rem;
     }
   
-    .project-item {
-      width: 100%;
-      margin-bottom: 2rem;
+    #toolsInfo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 0.5rem 0;
     }
   
     #projectInfo {
-      text-align: center;
+      display: flex;
+      flex-direction: co;
+      align-items: center;
+      margin: 1rem 0;
     }
   
     #projectImage {
-      order: 2;
-      margin-bottom: 1rem;
       width: 100%;
+      margin-bottom: 1rem;
+    }
+  
+    #projectDescription {
+      width: 100%;
+      margin-bottom: 1rem;
     }
   
     #viewButton {
@@ -761,7 +773,6 @@ canvas {
     }
   
     canvas {
-      margin: 2rem 5% 0;
       width: 70%;
     }
   }
