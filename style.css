@@ -249,7 +249,7 @@ canvas {
     width: max-content;
     position: relative;
     font-family: 'NHD-Light';
-    word-spacing: 0.9rem;    
+    word-spacing: 0.1rem;    
     color: rgb(99, 99, 99);
     font-size: 1.7vw; 
     font-weight: 500;
