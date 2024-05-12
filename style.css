@@ -691,6 +691,12 @@ canvas {
 
   
   @media screen and (max-width: 1008px) {
+
+    canvas {
+      display: none; 
+    }
+
+    
     #myName {
       font-size: 3.5vw;
 
@@ -698,6 +704,7 @@ canvas {
   
     #nameText {
       font-size: 17vw;
+      filter: none;
     }
   
     #traitsBox {
@@ -714,12 +721,11 @@ canvas {
     }
   
     .vertical-menu {
-      columns: 2;
+      columns: 1;
     }
   
     .vertical-menu-item {
-      break-inside: avoid-column;
-      font-size: 4.5vw;
+      font-size: 7.5vw;
     }
   
     #projectItems {
@@ -728,7 +734,9 @@ canvas {
       align-items: center;
       justify-content: center;
       margin: 20vw 0rem 2rem 0rem;
+      
     }
+    
     
     .project-container {
       display: flex;
@@ -768,7 +776,6 @@ canvas {
   
     #viewButton {
       order: 1;
-      /* margin-bottom: 1rem; */
       width: 90vw;
     }
 
@@ -789,9 +796,10 @@ canvas {
       font-size: 1.8rem;
       /* margin: 0 0 2rem 0; */
     }
-  
-    canvas {
-      width: 70%;
-      height: auto;
-    }
+
+    .vertical-menu-item::before {
+      content: ""; 
+      margin-right: 0; 
+  }
+
   }

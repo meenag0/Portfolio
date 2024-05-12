@@ -250,6 +250,7 @@ document.addEventListener('DOMContentLoaded', function() {
     setupMenuItems();
 
     
+    
     window.addEventListener('scroll', slideInProjectItems);
 
     
