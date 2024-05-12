@@ -1,5 +1,3 @@
-# Portfolio
-
 # Portfolio Website
 
 This repository contains the code for my personal portfolio website. It showcases my skills, projects, and interests, and provides an easy way to connect with me.
